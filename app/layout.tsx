@@ -1,8 +1,11 @@
 import type { Metadata } from "next";
-import { Inter_Tight, IBM_Plex_Sans_Arabic, JetBrains_Mono } from "next/font/google";
+import Script from "next/script";
+import { Inter_Tight, JetBrains_Mono } from "next/font/google";
+import Header from "@/components/Header";
 import "./globals.css";
 
-// Inter Tight — اللاتيني، الأوزان 400/500 فقط (brand/README.md)
+// Inter Tight — all Latin text, weights 400/500 only (brand/BRIEF.md §2).
+// IBM Plex Sans Arabic loads only on the Arabic locale in phase two.
 const interTight = Inter_Tight({
   variable: "--font-inter-tight",
   subsets: ["latin"],
@@ -10,15 +13,7 @@ const interTight = Inter_Tight({
   display: "swap",
 });
 
-// IBM Plex Sans Arabic — العربي، الأوزان 400/500 فقط (brand/README.md)
-const ibmPlexSansArabic = IBM_Plex_Sans_Arabic({
-  variable: "--font-ibm-plex-arabic",
-  subsets: ["arabic"],
-  weight: ["400", "500"],
-  display: "swap",
-});
-
-// JetBrains Mono — للأكواد والأرقام التقنية (brand/README.md)
+// JetBrains Mono — years, stack names, metric values, URL paths.
 const jetbrainsMono = JetBrains_Mono({
   variable: "--font-jetbrains-mono",
   subsets: ["latin"],
@@ -28,17 +23,37 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   title: "Mohamed Khalifa — Web Developer",
-  description: "Portfolio of Mohamed Khalifa, web developer.",
+  description:
+    "Full-stack web developer building fast, search-optimised content platforms and interactive tools for the Arabic market.",
 };
+
+// Dark is the default (brand/BRIEF.md §2) — the base CSS already renders it
+// with no class on <html>. This blocking script only ever needs to *add*
+// `.light` for a visitor who explicitly chose it on a previous visit, so
+// there is nothing to flash for the (default) dark case.
+const themeInitScript = `
+  try {
+    if (localStorage.getItem("theme") === "light") {
+      document.documentElement.classList.add("light");
+    }
+  } catch (e) {}
+`;
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
       dir="ltr"
-      className={`${interTight.variable} ${ibmPlexSansArabic.variable} ${jetbrainsMono.variable} antialiased`}
+      className={`${interTight.variable} ${jetbrainsMono.variable} antialiased`}
+      suppressHydrationWarning
     >
-      <body className="min-h-screen font-sans">{children}</body>
+      <body className="min-h-screen font-sans">
+        <Script id="theme-init" strategy="beforeInteractive">
+          {themeInitScript}
+        </Script>
+        <Header />
+        {children}
+      </body>
     </html>
   );
 }

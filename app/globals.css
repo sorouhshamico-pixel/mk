@@ -1,24 +1,50 @@
 @import "tailwindcss";
 
-/* ألوان الهوية — brand/README.md (وضع النهار فقط الآن، الوضع الليلي في مرحلة لاحقة) */
+/*
+ * Design tokens — brand/BRIEF.md section 2.
+ * Dark is the base (default, no class needed). `.light` on <html> overrides it.
+ * Token names match brand/brand-tokens.css + components/Logo.tsx usage
+ * (ink, muted, accent, accent-hover, accent-soft, hairline) plus two additions
+ * BRIEF introduces: `secondary` (supporting copy) and `surface` (raised panels).
+ */
 @theme {
+  --color-paper: #0c1512; /* page background */
+  --color-surface: #14201c; /* raised panels, hover states */
+  --color-hairline: #253430; /* every border, 0.5px only */
+  --color-ink: #f1efe8; /* text primary */
+  --color-secondary: #9a9a93; /* supporting copy */
+  --color-muted: #5f5e5a; /* labels, metadata, the second hero line */
+  --color-accent: #35b98c;
+  --color-accent-hover: #4acfa0;
+  --color-accent-soft: #0f3b2e;
+}
+
+.light {
+  --color-paper: #f1efe8;
+  --color-surface: #ffffff;
+  --color-hairline: #dddad0;
   --color-ink: #0c1512;
+  --color-secondary: #5f5e5a;
+  --color-muted: #9a9a93;
   --color-accent: #1d9e75;
   --color-accent-hover: #16805e;
   --color-accent-soft: #e1f5ee;
-  --color-paper: #f1efe8;
-  --color-muted: #5f5e5a;
-  --color-hairline: #dddad0;
 }
 
-/* خطوط الهوية — next/font يضبط القيم الفعلية في layout.tsx */
+/* Fonts — next/font sets these custom properties in app/layout.tsx.
+   IBM Plex Sans Arabic loads only on the Arabic locale in phase two. */
 @theme inline {
-  --font-sans: var(--font-ibm-plex-arabic), var(--font-inter-tight), sans-serif;
-  --font-latin: var(--font-inter-tight), sans-serif;
+  --font-sans: var(--font-inter-tight), sans-serif;
   --font-mono: var(--font-jetbrains-mono), monospace;
 }
 
 body {
   background-color: var(--color-paper);
   color: var(--color-ink);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  body {
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
 }
