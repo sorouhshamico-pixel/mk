@@ -1,5 +1,7 @@
-// معاينة مؤقتة للخطوة 2: ألوان الهوية + الخطوط عبر next/font.
+// معاينة مؤقتة للخطوات 2-3: ألوان الهوية، الخطوط عبر next/font، ومكوّن Logo.
 // هذه الصفحة placeholder وستُستبدل ببنية الموقع الكاملة في الخطوة 4.
+
+import Logo from "@/components/Logo";
 
 const swatches = [
   { name: "ink", className: "bg-ink" },
@@ -14,12 +16,13 @@ const swatches = [
 export default function Home() {
   return (
     <main className="mx-auto flex max-w-2xl flex-col gap-10 px-6 py-16">
-      <header className="flex flex-col gap-2">
+      <header className="flex flex-col gap-4">
+        <Logo />
         <h1 className="text-2xl font-medium text-ink font-latin">
           Brand check — Mohamed Khalifa
         </h1>
         <p className="text-muted">
-          معاينة مؤقتة لألوان الهوية والخطوط قبل بناء هيكل الموقع.
+          معاينة مؤقتة لألوان الهوية والخطوط والشعار قبل بناء هيكل الموقع.
         </p>
       </header>
 
