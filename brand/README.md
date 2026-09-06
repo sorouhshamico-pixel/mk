@@ -1,26 +1,18 @@
 # هوية محمد خليفة — دليل الاستخدام
 
-> **ملاحظة:** هذا الدليل يوثّق قواعد الهوية والألوان فقط. الملفات الفعلية
-> منقولة داخل مشروع Next.js إلى مكانها النهائي:
->
-> - شعارات `logo/*.svg` → [`public/`](../public)
-> - `logo/favicon.svg` → [`app/icon.svg`](../app/icon.svg) (فافيكون تلقائي)
-> - `og-image.svg` → [`public/og-image.svg`](../public/og-image.svg)
-> - `Logo.tsx` → [`components/Logo.tsx`](../components/Logo.tsx)
+## الملفات
 
-## الملفات (النسخة الأصلية لحزمة الهوية)
-
-| الملف | الاستخدام | المكان الفعلي في المشروع |
-| --- | --- | --- |
-| `logo/logo-horizontal.svg` | النسخة الرئيسية بلونين — الهيدر، توقيع الإيميل، الترويسات | `public/logo-horizontal.svg` |
-| `logo/logo-horizontal-mono.svg` | نسخة أحادية تتبع `currentColor` — الطباعة، الخلفيات الداكنة، الختم | `public/logo-horizontal-mono.svg` |
-| `logo/logo-mark.svg` | المارك وحده — عندما يكون الاسم مذكوراً بجواره أصلاً | `public/logo-mark.svg` |
-| `logo/logo-badge.svg` | الشارة — الأفاتار وحسابات التواصل | `public/logo-badge.svg` |
-| `logo/favicon.svg` | الفافيكون | `app/icon.svg` |
-| `og-image.svg` | صورة المشاركة 1200×630 | `public/og-image.svg` |
-| `brand-tokens.css` | متغيّرات الألوان والخطوط بوضعَي فاتح وداكن | (مرجع فقط — الألوان مطبّقة في `app/globals.css`) |
-| `Logo.tsx` | مكوّن React جاهز | `components/Logo.tsx` |
-| `brand-preview.html` | افتحه في المتصفح لمعاينة كل شيء | يبقى هنا كمرجع تصميم |
+| الملف | الاستخدام |
+|---|---|
+| `logo/logo-horizontal.svg` | النسخة الرئيسية بلونين — الهيدر، توقيع الإيميل، الترويسات |
+| `logo/logo-horizontal-mono.svg` | نسخة أحادية تتبع `currentColor` — الطباعة، الخلفيات الداكنة، الختم |
+| `logo/logo-mark.svg` | المارك وحده — عندما يكون الاسم مذكوراً بجواره أصلاً |
+| `logo/logo-badge.svg` | الشارة — الأفاتار وحسابات التواصل |
+| `logo/favicon.svg` | الفافيكون |
+| `og-image.svg` | صورة المشاركة 1200×630 |
+| `brand-tokens.css` | متغيّرات الألوان والخطوط بوضعَي فاتح وداكن |
+| `Logo.tsx` | مكوّن React جاهز |
+| `brand-preview.html` | افتحه في المتصفح لمعاينة كل شيء |
 
 ## قواعد الاستخدام
 
