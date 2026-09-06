@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 184 48" width="184" height="48" role="img" aria-label="Mohamed Khalifa, web developer">
+  <title>M. Khalifa — web developer (monochrome)</title>
+  <g fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M6 37 L6 11 L17 24 L28 11 L28 37"/>
+    <path d="M36 11 L36 37"/>
+    <path d="M36 24 L50 11"/>
+    <path d="M36 24 L50 37"/>
+  </g>
+  <circle cx="57" cy="6" r="3.5" fill="currentColor"/>
+  <text x="66" y="22" font-family="Inter Tight, Inter, Helvetica Neue, Arial, sans-serif" font-size="13" font-weight="500" letter-spacing="1" fill="currentColor">M. KHALIFA</text>
+  <text x="66" y="38" font-family="Inter Tight, Inter, Helvetica Neue, Arial, sans-serif" font-size="11" font-weight="400" letter-spacing="2" fill="currentColor" opacity="0.65">web developer</text>
+</svg>

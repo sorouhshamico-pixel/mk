@@ -1,0 +1,24 @@
+@import "tailwindcss";
+
+/* ألوان الهوية — brand/README.md (وضع النهار فقط الآن، الوضع الليلي في مرحلة لاحقة) */
+@theme {
+  --color-ink: #0c1512;
+  --color-accent: #1d9e75;
+  --color-accent-hover: #16805e;
+  --color-accent-soft: #e1f5ee;
+  --color-paper: #f1efe8;
+  --color-muted: #5f5e5a;
+  --color-hairline: #dddad0;
+}
+
+/* خطوط الهوية — next/font يضبط القيم الفعلية في layout.tsx */
+@theme inline {
+  --font-sans: var(--font-ibm-plex-arabic), var(--font-inter-tight), sans-serif;
+  --font-latin: var(--font-inter-tight), sans-serif;
+  --font-mono: var(--font-jetbrains-mono), monospace;
+}
+
+body {
+  background-color: var(--color-paper);
+  color: var(--color-ink);
+}

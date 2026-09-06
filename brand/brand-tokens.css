@@ -1,0 +1,25 @@
+:root {
+  --brand-ink: #0C1512;
+  --brand-accent: #1D9E75;
+  --brand-accent-hover: #16805E;
+  --brand-accent-soft: #E1F5EE;
+  --brand-paper: #F1EFE8;
+  --brand-surface: #FFFFFF;
+  --brand-muted: #5F5E5A;
+  --brand-border: #DDDAD0;
+
+  --font-latin: "Inter Tight", "Inter", system-ui, sans-serif;
+  --font-arabic: "IBM Plex Sans Arabic", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+}
+
+[data-theme="dark"] {
+  --brand-ink: #F1EFE8;
+  --brand-accent: #35B98C;
+  --brand-accent-hover: #4ACFA0;
+  --brand-accent-soft: #0F3B2E;
+  --brand-paper: #0C1512;
+  --brand-surface: #14201C;
+  --brand-muted: #9A9A93;
+  --brand-border: #253430;
+}

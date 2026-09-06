@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>هوية محمد خليفة — معاينة</title>
+<link rel="icon" href="logo/favicon.svg" type="image/svg+xml">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500&family=Inter+Tight:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{--ink:#0C1512;--accent:#1D9E75;--paper:#F1EFE8;--surface:#fff;--muted:#5F5E5A;--border:#DDDAD0}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:"IBM Plex Sans Arabic",system-ui,sans-serif;font-weight:400;line-height:1.7}
+  .wrap{max-width:960px;margin:0 auto;padding:64px 24px 96px}
+  h1{font-size:28px;font-weight:500;margin:0 0 8px}
+  .sub{color:var(--muted);margin:0 0 56px}
+  h2{font-size:15px;font-weight:500;margin:0 0 20px;color:var(--muted)}
+  section{margin-bottom:56px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+  .tile{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:32px;display:flex;align-items:center;justify-content:center;min-height:128px}
+  .tile.dark{background:var(--ink);border-color:#253430}
+  .tile img{max-width:100%;height:auto}
+  .sizes{display:flex;align-items:flex-end;gap:24px;flex-wrap:wrap}
+  .sizes figure{margin:0;text-align:center}
+  .sizes figcaption{font-size:12px;color:var(--muted);margin-top:8px;font-family:"Inter Tight",sans-serif}
+  .swatches{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px}
+  .sw{border-radius:12px;padding:16px;min-height:96px;display:flex;flex-direction:column;justify-content:flex-end;font-size:13px}
+  .sw code{font-family:"Inter Tight",monospace;font-size:12px;opacity:.75;display:block}
+  .rule{border:0;border-top:1px solid var(--border);margin:0 0 56px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>هوية محمد خليفة</h1>
+  <p class="sub">مطوّر ويب — معاينة الشعار والألوان</p>
+  <hr class="rule">
+
+  <section>
+    <h2>الشعار الأفقي</h2>
+    <div class="grid">
+      <div class="tile"><img src="logo/logo-horizontal.svg" width="230" alt="الشعار على خلفية فاتحة"></div>
+      <div class="tile dark" style="color:#F1EFE8"><img src="logo/logo-horizontal-mono.svg" width="230" alt="الشعار الأحادي على خلفية داكنة"></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>المارك والشارة</h2>
+    <div class="grid">
+      <div class="tile"><img src="logo/logo-mark.svg" width="96" alt="المارك"></div>
+      <div class="tile"><img src="logo/logo-badge.svg" width="80" alt="الشارة"></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>اختبار المقاسات الصغيرة</h2>
+    <div class="tile" style="justify-content:flex-start">
+      <div class="sizes">
+        <figure><img src="logo/favicon.svg" width="64" alt=""><figcaption>64</figcaption></figure>
+        <figure><img src="logo/favicon.svg" width="32" alt=""><figcaption>32</figcaption></figure>
+        <figure><img src="logo/favicon.svg" width="16" alt=""><figcaption>16</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>الألوان</h2>
+    <div class="swatches">
+      <div class="sw" style="background:#0C1512;color:#E1F5EE">حبر<code>#0C1512</code></div>
+      <div class="sw" style="background:#1D9E75;color:#04342C">مميّز<code>#1D9E75</code></div>
+      <div class="sw" style="background:#F1EFE8;color:#2C2C2A;border:1px solid var(--border)">ورق<code>#F1EFE8</code></div>
+      <div class="sw" style="background:#5F5E5A;color:#F1EFE8">محايد<code>#5F5E5A</code></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>صورة المشاركة</h2>
+    <div class="tile" style="padding:16px"><img src="og-image.svg" alt="صورة OG"></div>
+  </section>
+</div>
+</body>
+</html>
