@@ -74,10 +74,50 @@ export const workSection = {
 };
 
 export const about = {
+  eyebrow: "About",
   heading: `I've been building for the web since ${site.startYear}`,
+  // The line the page opens on — pulled out and set large. Real words from
+  // the bio below, not new copy.
+  pullQuote:
+    "A fast site nobody can find is not a finished project, and a visible site that takes six seconds to paint loses its reader before the first sentence.",
   bio: [
-    "I'm Mohamed Khalifa, a full-stack web developer based in Cairo. I work on content platforms and interactive tools in Arabic, and I care most about the seam where engineering meets discoverability. A fast site nobody can find is not a finished project, and a visible site that takes six seconds to paint loses its reader before the first sentence.",
-    "My most recent launch is Wazifatk, a Saudi job platform I built alone from the database schema to the last detail of the interface. Before that, I spent years freelancing across the MENA region — e-commerce stores, landing pages, and corporate sites for clients in Saudi Arabia, Turkey, Qatar, Morocco, and Tunisia — and three years as an in-house web developer at Manarat.",
+    "I'm Mohamed Khalifa, a full-stack web developer based in Cairo. I work on content platforms and interactive tools in Arabic, and I care most about the seam where engineering meets discoverability.",
+    "My most recent launch is Wazifatk, a Saudi job platform I built alone from the database schema to the last detail of the interface.",
+  ],
+  // Real chronology (mohamedkhalifa.netlify.app) narrated in full — not new
+  // facts, just the story the timeline below only shows as dates.
+  story: [
+    "I didn't start in code. I studied Geographic Information Systems at Assiut University, and spent the next couple of years mapping infrastructure for Orascom Construction — work that has more in common with structured data and spatial logic than it looks like from the outside.",
+    "Somewhere in the middle of that job, I picked up a web development scholarship and started teaching myself to build for the browser in whatever hours were left in the day. By 2018 the self-taught skill had become the actual job: I went freelance, and spent the next few years building stores, landing pages, and corporate sites for clients across Saudi Arabia, Turkey, Qatar, Morocco, and Tunisia.",
+    "Freelancing at that pace teaches you the constraint that matters most — at the end of every project, someone with a real budget has to see it working. I kept sharpening the craft through more training, then moved in-house at Manarat in 2021 to build depth instead of breadth for a while.",
+    "Wazifatk is where those two instincts met: the GIS-trained comfort with structured, spatial data, and years of shipping to real deadlines for real clients. It's a job platform with five labour-law calculators and a fully generated set of city and sector pages — planned, built, and shipped by one person.",
+  ],
+  // Working principles, drawn from how the case studies on this site are
+  // actually described — not aspirational copy invented for this page.
+  philosophy: [
+    {
+      title: "Ship the tool before the content.",
+      body: "A calculator or utility answers a question people are already searching for. It brings in a visitor who wasn't looking for the rest of the site — then the content is what keeps them.",
+    },
+    {
+      title: "Fast is a feature, not a nice-to-have.",
+      body: "Core Web Vitals aren't a report to run after launch. A slow site loses its reader before the first sentence, no matter how good that sentence is.",
+    },
+    {
+      title: "SEO is structure, not a later pass.",
+      body: "Canonical URLs, semantic markup, and internal linking get decided at the schema stage — bolting search on at the end always shows.",
+    },
+    {
+      title: "Own the whole thing when you can.",
+      body: "Database schema to the last pixel. Fewer handoffs means fewer places for a project to quietly go wrong.",
+    },
+  ],
+  // mohamedkhalifa.netlify.app — listed as personal interests there.
+  interests: [
+    { icon: "Gamepad2", label: "Gaming" },
+    { icon: "Tent", label: "Camping" },
+    { icon: "BookOpen", label: "Reading" },
+    { icon: "Waves", label: "Swimming" },
   ],
   skillGroups: [
     {
