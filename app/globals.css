@@ -65,3 +65,61 @@ body {
 @utility animate-status-pulse {
   animation: status-pulse 3s ease-in-out infinite;
 }
+
+html {
+  scroll-behavior: smooth;
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* Soft ambient blobs behind the hero/section headers — slow, subtle drift. */
+@keyframes blob-float {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(3%, -4%) scale(1.05);
+  }
+}
+
+@utility animate-blob {
+  animation: blob-float 14s ease-in-out infinite;
+}
+
+/* Fade-up entrance — components/Reveal.tsx applies this class directly (no
+ * JS/IntersectionObserver). A plain CSS animation always resolves to fully
+ * visible on its own regardless of scroll position, so content already
+ * below the fold can never get stuck hidden — unlike a scroll-triggered
+ * "opacity:0 until observed" approach, which broke exactly that case. */
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@utility fade-up-in {
+  animation: fade-up 0.7s ease both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fade-up-in {
+    animation: none;
+  }
+}
+
+/* Card hover lift — shadow grows and the card rises slightly. */
+@utility hover-lift {
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  &:hover {
+    transform: translateY(-4px);
+  }
+}

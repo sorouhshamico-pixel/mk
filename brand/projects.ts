@@ -74,13 +74,13 @@ export const projects: Project[] = [
     metrics: [
       { label: "Role", value: "Sole developer" },
       { label: "Timeline", value: "[months]" },
-      { label: "Cities covered", value: "19" },
+      { label: "Cities covered", value: "4" },
       { label: "Tools built", value: "5" },
     ],
     problem:
       "Job seekers in Saudi Arabia hop between Telegram channels and scattered social posts, and most of what they find is duplicated or already closed. The established sites are either translated from English and miss the local context, or heavy enough that they stall on a mobile connection. And the questions people actually ask, like what their end-of-service payout comes to or what lands in their account after deductions, have no trustworthy answer in one place.",
     decision:
-      "Rather than build another job board, I built three layers that feed each other. Listings sorted across 19 cities and 11 sectors, with a dedicated page per role and per employer. Articles covering CVs, interviews, and how the Saudi labour market actually works. And five calculators built on Saudi labour law: end-of-service gratuity, annual leave balance, probation period, net salary, and a CV-to-job match checker. The third layer is what makes the difference. A calculator answers a question people search for every month, so it brings in a visitor who was not looking for a job at all, then introduces them to the platform. It also gives them a reason to come back long after they have been hired.",
+      "Rather than build another job board, I built three layers that feed each other. Listings sorted across cities and sectors, with a dedicated page per role and per employer. Articles covering CVs, interviews, and how the Saudi labour market actually works. And five calculators built on Saudi labour law: end-of-service gratuity, annual leave balance, probation period, net salary, and a CV-to-job match checker. The third layer is what makes the difference. A calculator answers a question people search for every month, so it brings in a visitor who was not looking for a job at all, then introduces them to the platform. It also gives them a reason to come back long after they have been hired.",
     technical: [
       {
         title: "Generated pages for every city and sector",
@@ -104,12 +104,10 @@ export const projects: Project[] = [
       },
     ],
     results: [
-      "[number] roles published across [number] employers",
-      "[number] career articles indexed",
+      "11 roles published across 16 employers",
+      "28+ career articles indexed",
       "5 interactive tools running fully client-side",
-      "19 Saudi cities covered",
-      "Core Web Vitals: [score]",
-      "[monthly traffic or growth rate, if you have it]",
+      "4 Saudi cities covered",
     ],
     learned:
       "Building Arabic content forces decisions that never come up in English projects. RTL touches every component, not just the typeface. Generating URL slugs from Arabic headlines needs its own handling. And a gratuity calculator built on Saudi labour law means reading the law itself rather than copying a formula off another site. The most useful thing I got right: shipping the tools before the content. The tools bring the visitor in, and the content is what keeps them.",

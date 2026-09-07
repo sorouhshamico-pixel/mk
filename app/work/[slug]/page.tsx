@@ -90,7 +90,9 @@ export default async function CaseStudyPage({
       </header>
 
       <div className="mx-auto max-w-[1200px] px-6 py-10">
-        <ProjectCover project={project} variant="cover" className="w-full" />
+        <div className="overflow-hidden rounded-2xl border-[0.5px] border-hairline shadow-2xl">
+          <ProjectCover project={project} variant="cover" className="w-full" />
+        </div>
       </div>
 
       <div className="mx-auto flex max-w-[720px] flex-col gap-14 px-6 pb-24">
@@ -147,7 +149,7 @@ export default async function CaseStudyPage({
             href={project.links.live}
             target="_blank"
             rel="noopener noreferrer"
-            className="w-fit rounded-sm bg-accent px-5 py-2.5 text-sm font-medium text-paper transition-colors hover:bg-accent-hover"
+            className="w-fit rounded-full bg-accent px-6 py-3 text-sm font-medium text-paper shadow-lg shadow-accent/25 transition-all hover:-translate-y-0.5 hover:bg-accent-hover hover:shadow-xl"
           >
             Visit {project.name} →
           </a>
