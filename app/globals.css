@@ -48,3 +48,20 @@ body {
     transition: background-color 0.2s ease, color 0.2s ease;
   }
 }
+
+/* Status badge dot — brand/BRIEF.md §4.1. Opacity fade only, no scale/glow.
+   Only ever applied via the motion-safe: variant, so reduced-motion visitors
+   get a static dot for free. */
+@keyframes status-pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.4;
+  }
+}
+
+@utility animate-status-pulse {
+  animation: status-pulse 3s ease-in-out infinite;
+}

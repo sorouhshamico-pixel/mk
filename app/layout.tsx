@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Script from "next/script";
 import { Inter_Tight, JetBrains_Mono } from "next/font/google";
 import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import { site, seo } from "@/lib/site";
 import "./globals.css";
 
 // Inter Tight — all Latin text, weights 400/500 only (brand/BRIEF.md §2).
@@ -22,9 +24,21 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Mohamed Khalifa — Web Developer",
-  description:
-    "Full-stack web developer building fast, search-optimised content platforms and interactive tools for the Arabic market.",
+  metadataBase: new URL(site.url),
+  title: { default: seo.home.title, template: `%s | ${site.name}` },
+  description: seo.home.description,
+  openGraph: {
+    title: seo.home.title,
+    description: seo.home.description,
+    url: site.url,
+    siteName: site.name,
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: seo.home.title,
+    description: seo.home.description,
+  },
 };
 
 // Dark is the default (brand/BRIEF.md §2) — the base CSS already renders it
@@ -47,12 +61,13 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${interTight.variable} ${jetbrainsMono.variable} antialiased`}
       suppressHydrationWarning
     >
-      <body className="min-h-screen font-sans">
+      <body className="flex min-h-screen flex-col font-sans">
         <Script id="theme-init" strategy="beforeInteractive">
           {themeInitScript}
         </Script>
         <Header />
-        {children}
+        <main className="flex-1">{children}</main>
+        <Footer />
       </body>
     </html>
   );

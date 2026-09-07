@@ -52,10 +52,10 @@ export default function Logo({ variant = "full", className }: LogoProps) {
     <span className={`inline-flex items-center gap-3 ${className ?? ""}`}>
       <Mark className="h-8 w-auto" />
       <span className="flex flex-col leading-none">
-        <span className="text-[13px] font-medium tracking-[0.08em] text-ink">
+        <span className="whitespace-nowrap text-[13px] font-medium tracking-[0.08em] text-ink">
           M. KHALIFA
         </span>
-        <span className="mt-1 text-[11px] tracking-[0.18em] text-muted">
+        <span className="mt-1 hidden whitespace-nowrap text-[11px] tracking-[0.18em] text-muted sm:block">
           web developer
         </span>
       </span>

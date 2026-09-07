@@ -1,19 +1,32 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useSyncExternalStore } from "react";
 
 // Dark is the default (no class on <html>). This only ever adds/removes
 // `.light`. See the inline script in app/layout.tsx for the initial state.
-export default function ThemeToggle() {
-  const [isLight, setIsLight] = useState(false);
+//
+// The DOM class itself is the source of truth (kept in sync with a
+// MutationObserver via useSyncExternalStore) rather than mirrored into
+// local state, so there's nothing to reconcile and no setState-in-effect.
+function subscribe(callback: () => void) {
+  const observer = new MutationObserver(callback);
+  observer.observe(document.documentElement, { attributes: true, attributeFilter: ["class"] });
+  return () => observer.disconnect();
+}
 
-  useEffect(() => {
-    setIsLight(document.documentElement.classList.contains("light"));
-  }, []);
+function getSnapshot() {
+  return document.documentElement.classList.contains("light");
+}
+
+function getServerSnapshot() {
+  return false; // dark is the base state
+}
+
+export default function ThemeToggle() {
+  const isLight = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
 
   function toggle() {
     const next = !isLight;
-    setIsLight(next);
     document.documentElement.classList.toggle("light", next);
     try {
       localStorage.setItem("theme", next ? "light" : "dark");
@@ -41,7 +54,6 @@ export default function ThemeToggle() {
         strokeLinecap="round"
         strokeLinejoin="round"
         aria-hidden="true"
-        suppressHydrationWarning
       >
         {isLight ? (
           <path d="M12 3v2m0 14v2m9-9h-2M5 12H3m15.36 6.36-1.41-1.41M7.05 7.05 5.64 5.64m12.72 0-1.41 1.41M7.05 16.95l-1.41 1.41M12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8Z" />
