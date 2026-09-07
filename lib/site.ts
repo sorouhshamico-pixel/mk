@@ -27,9 +27,12 @@ export const nav = [
 ];
 
 export const hero = {
-  h1: "I build web platforms for the Arabic market",
+  lead: "I build",
+  // Cycles in the animated word slot — components/RotatingWord.tsx.
+  rotating: ["content platforms", "interactive tools", "job platforms", "e-commerce stores"],
+  tail: "that win in Arabic search.",
   subhead:
-    "Full-stack developer. I ship content platforms and interactive tools in Arabic that load fast, rank well, and install on a phone like an app.",
+    "Full-stack developer based in Cairo. Eight years turning briefs into fast, Arabic-first products — from a Saudi job platform with five labour-law calculators to dozens of stores and corporate sites across the Gulf.",
   primaryCta: { label: "View work", href: "#work" },
   secondaryCta: { label: "Get in touch", href: "/contact" },
   stack: ["Laravel", "Next.js", "PHP", "TypeScript", "Tailwind", "MySQL"],

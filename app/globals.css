@@ -90,6 +90,17 @@ html {
   animation: blob-float 14s ease-in-out infinite;
 }
 
+/* Slow rotation for the accent ring behind the hero portrait. */
+@keyframes spin-slow {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@utility animate-spin-slow {
+  animation: spin-slow 16s linear infinite;
+}
+
 /* Fade-up entrance — components/Reveal.tsx applies this class directly (no
  * JS/IntersectionObserver). A plain CSS animation always resolves to fully
  * visible on its own regardless of scroll position, so content already

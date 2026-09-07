@@ -1,15 +1,10 @@
 import Link from "next/link";
-import Image from "next/image";
-import {
-  Newspaper,
-  Calculator,
-  SearchCheck,
-  ArrowRight,
-  Sparkles,
-} from "lucide-react";
+import { Newspaper, Calculator, SearchCheck, ArrowRight } from "lucide-react";
 import StatusBadge from "@/components/StatusBadge";
 import ProjectCard from "@/components/ProjectCard";
 import Reveal from "@/components/Reveal";
+import RotatingWord from "@/components/RotatingWord";
+import HeroPortrait from "@/components/HeroPortrait";
 import { hero, whatIDo, workSection, site, contact, stats, blog } from "@/lib/site";
 import { readyFeaturedProjects, hasPublicAsset } from "@/lib/projects";
 import { otherWork } from "@/lib/other-work";
@@ -52,11 +47,11 @@ export default function Home() {
             <StatusBadge />
 
             <h1 className="text-[clamp(36px,7vw,80px)] font-medium uppercase leading-[1.03] tracking-[-0.02em] text-ink">
-              I build web platforms
+              {hero.lead}
               <br />
-              <span className="text-secondary">
-                for the Arabic market<span className="text-accent">.</span>
-              </span>
+              <RotatingWord words={hero.rotating} className="text-accent" />
+              <br />
+              <span className="text-secondary">{hero.tail}</span>
             </h1>
 
             <p className="max-w-[460px] text-[15px] leading-[1.7] text-secondary sm:text-lg">
@@ -81,26 +76,7 @@ export default function Home() {
             <p className="font-mono text-xs text-muted">{hero.stack.join(" · ")}</p>
           </div>
 
-          <div className="relative mx-auto w-full max-w-[360px]">
-            <div
-              aria-hidden="true"
-              className="absolute -inset-4 rounded-[2rem] bg-gradient-to-br from-accent/30 via-accent/5 to-transparent blur-2xl"
-            />
-            <div className="relative overflow-hidden rounded-[1.75rem] border-[0.5px] border-hairline shadow-2xl">
-              <Image
-                src="/mohamed-khalifa.jpg"
-                alt={site.name}
-                width={720}
-                height={720}
-                priority
-                className="aspect-square w-full object-cover"
-              />
-            </div>
-            <div className="absolute -bottom-5 -right-5 flex items-center gap-2 rounded-full border-[0.5px] border-hairline bg-paper px-4 py-2 shadow-xl">
-              <Sparkles size={14} className="text-accent" />
-              <span className="font-mono text-xs text-ink">{site.location}</span>
-            </div>
-          </div>
+          <HeroPortrait />
         </div>
       </section>
 
