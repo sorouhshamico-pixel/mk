@@ -76,6 +76,16 @@ export const workSection = {
   subhead: "Real projects, live and in use.",
 };
 
+// Homepage-only condensed version of the About page's story — same real
+// facts (GIS background, self-taught, freelance across the Gulf, Wazifatk),
+// written shorter and punchier for a skim, linking out to the full version.
+export const intro = {
+  lead: "I didn't start in code.",
+  paragraph:
+    "I started in Geographic Information Systems, then taught myself to build for the browser one freelance project at a time. Eight years and dozens of client sites across the Gulf later, that self-taught instinct became Wazifatk — a Saudi job platform built alone, from the database schema to the shipped product.",
+  cta: { label: "Read the full story", href: "/about" },
+};
+
 export const about = {
   eyebrow: "About",
   heading: `I've been building for the web since ${site.startYear}`,

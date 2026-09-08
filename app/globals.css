@@ -41,12 +41,28 @@
 body {
   background-color: var(--color-paper);
   color: var(--color-ink);
+  position: relative;
 }
 
 @media (prefers-reduced-motion: no-preference) {
   body {
     transition: background-color 0.2s ease, color 0.2s ease;
   }
+}
+
+/* A hair of film grain over the whole site — the one texture that ties
+ * every page/section together no matter what's layered under it. Fixed
+ * and non-interactive, so it never affects layout or scroll. */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  pointer-events: none;
+  opacity: 0.05;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 180px 180px;
 }
 
 /* Status badge dot — brand/BRIEF.md §4.1. Opacity fade only, no scale/glow.
