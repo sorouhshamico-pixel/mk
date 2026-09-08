@@ -9,8 +9,8 @@ const WHATSAPP_GREEN_DARK = "#1DA851";
 
 /** A floating WhatsApp button, bottom-right, on every page. Two pulsing
  *  sonar rings behind it (motion-safe only), a one-time greeting bubble a
- *  couple of seconds after the page settles, and a label that slides out
- *  on hover/focus — rather than a plain green circle. */
+ *  couple of seconds after the page settles, and the icon itself wiggles
+ *  on hover/focus — no expanding label, just that one animation. */
 export default function WhatsAppFloat() {
   const [showBubble, setShowBubble] = useState(false);
   const [dismissed, setDismissed] = useState(false);
@@ -45,17 +45,16 @@ export default function WhatsAppFloat() {
         </div>
       )}
 
-      <div className="group relative h-14">
-        {/* sonar rings — fixed to the icon's own footprint, so they read as
-            a pulse around the button even while the pill expands beside them */}
+      <div className="group relative h-14 w-14">
+        {/* sonar rings */}
         <span
           aria-hidden="true"
-          className="motion-safe:animate-ping-slow pointer-events-none absolute right-0 top-0 h-14 w-14 rounded-full"
+          className="motion-safe:animate-ping-slow pointer-events-none absolute inset-0 rounded-full"
           style={{ backgroundColor: WHATSAPP_GREEN, opacity: 0.55 }}
         />
         <span
           aria-hidden="true"
-          className="motion-safe:animate-ping-slower pointer-events-none absolute right-0 top-0 h-14 w-14 rounded-full"
+          className="motion-safe:animate-ping-slower pointer-events-none absolute inset-0 rounded-full"
           style={{ backgroundColor: WHATSAPP_GREEN, opacity: 0.35 }}
         />
 
@@ -65,19 +64,16 @@ export default function WhatsAppFloat() {
           rel="noopener noreferrer"
           aria-label={`Chat on WhatsApp — ${site.phoneDisplay}`}
           onMouseEnter={() => setDismissed(true)}
-          className="relative z-10 flex h-14 items-center overflow-hidden rounded-full text-white shadow-2xl"
+          className="relative z-10 flex h-14 w-14 items-center justify-center rounded-full text-white shadow-2xl transition-shadow hover:shadow-[0_0_0_6px_rgba(37,211,102,0.18)]"
           style={{ background: `linear-gradient(135deg, ${WHATSAPP_GREEN}, ${WHATSAPP_GREEN_DARK})` }}
         >
-          <span className="max-w-0 overflow-hidden whitespace-nowrap pl-0 text-sm font-medium opacity-0 transition-all duration-300 ease-out group-hover:max-w-[10rem] group-hover:pl-4 group-hover:opacity-100 group-focus-within:max-w-[10rem] group-focus-within:pl-4 group-focus-within:opacity-100">
-            Chat on WhatsApp
-          </span>
-          <span className="relative flex h-14 w-14 shrink-0 items-center justify-center">
+          <span className="motion-safe:group-hover:animate-icon-wiggle motion-safe:group-focus-within:animate-icon-wiggle">
             <WhatsAppIcon size={26} />
-            <span
-              aria-hidden="true"
-              className="absolute right-1 top-1 h-3 w-3 rounded-full border-2 border-white bg-lime-400"
-            />
           </span>
+          <span
+            aria-hidden="true"
+            className="absolute right-1 top-1 h-3 w-3 rounded-full border-2 border-white bg-lime-400"
+          />
         </a>
       </div>
     </div>

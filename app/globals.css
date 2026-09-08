@@ -134,6 +134,28 @@ html {
   animation: ping-soft 2.4s cubic-bezier(0, 0, 0.2, 1) infinite 1.2s;
 }
 
+/* WhatsApp float icon — plays once on hover/focus, nothing else moves. */
+@keyframes icon-wiggle {
+  0%,
+  100% {
+    transform: rotate(0deg) scale(1);
+  }
+  25% {
+    transform: rotate(-14deg) scale(1.12);
+  }
+  50% {
+    transform: rotate(10deg) scale(1.12);
+  }
+  75% {
+    transform: rotate(-6deg) scale(1.05);
+  }
+}
+
+@utility animate-icon-wiggle {
+  display: inline-flex;
+  animation: icon-wiggle 0.5s ease-in-out;
+}
+
 @utility animate-spin-slow {
   animation: spin-slow 16s linear infinite;
 }
