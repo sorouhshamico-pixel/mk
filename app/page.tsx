@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { Newspaper, Calculator, SearchCheck, ArrowRight, ArrowUpRight } from "lucide-react";
+import Image from "next/image";
+import { Newspaper, Calculator, SearchCheck, ArrowRight } from "lucide-react";
 import StatusBadge from "@/components/StatusBadge";
 import ProjectCard from "@/components/ProjectCard";
 import Reveal from "@/components/Reveal";
@@ -10,6 +11,7 @@ import SectionMark from "@/components/SectionMark";
 import { hero, whatIDo, workSection, site, contact, stats, blog, intro } from "@/lib/site";
 import { readyFeaturedProjects, hasPublicAsset } from "@/lib/projects";
 import { otherWork } from "@/lib/other-work";
+import { sortedPosts } from "@/lib/posts";
 
 const icons = { Newspaper, Calculator, SearchCheck };
 
@@ -213,24 +215,49 @@ export default function Home() {
           </Link>
         </section>
 
-        {/* Blog teaser */}
-        <Reveal>
-          <section className="relative mx-auto max-w-[1200px] px-6 py-10">
-            <div className="flex flex-col items-start justify-between gap-6 rounded-2xl border-[0.5px] border-hairline bg-gradient-to-br from-surface to-paper p-8 shadow-lg sm:flex-row sm:items-center">
-              <div className="flex flex-col gap-2">
-                <h2 className="text-xl text-ink">{blog.heading}</h2>
-                <p className="max-w-[520px] text-sm text-secondary">{blog.subhead}</p>
-              </div>
-              <Link
-                href="/blog"
-                className="group inline-flex shrink-0 items-center gap-2 rounded-full border-[0.5px] border-hairline px-5 py-2.5 text-sm font-medium text-ink transition-all hover:-translate-y-0.5 hover:bg-paper hover:shadow-md"
-              >
-                Visit the blog
-                <ArrowUpRight size={14} className="transition-transform group-hover:translate-x-1 group-hover:-translate-y-0.5" />
-              </Link>
+        {/* Blog */}
+        <section className="relative mx-auto flex max-w-[1200px] flex-col gap-10 px-6 py-14 sm:py-20">
+          <Reveal>
+            <div className="flex flex-col gap-2">
+              <SectionMark index="04" label={blog.heading} />
+              <p className="pl-9 text-secondary">{blog.subhead}</p>
             </div>
-          </section>
-        </Reveal>
+          </Reveal>
+
+          <div className="grid gap-6 sm:grid-cols-3">
+            {sortedPosts.slice(0, 3).map((post, i) => (
+              <Reveal key={post.slug} delay={i * 80}>
+                <Link
+                  href={`/blog/${post.slug}`}
+                  className="hover-lift group flex h-full flex-col overflow-hidden rounded-xl border-[0.5px] border-hairline bg-surface shadow-sm hover:border-accent/40 hover:shadow-xl"
+                >
+                  <div className="relative aspect-[1200/630] w-full overflow-hidden">
+                    <Image
+                      src={post.cover}
+                      alt=""
+                      fill
+                      sizes="(min-width: 640px) 33vw, 100vw"
+                      className="object-cover transition-transform duration-500 group-hover:scale-105"
+                      unoptimized
+                    />
+                  </div>
+                  <div className="flex flex-1 flex-col gap-2 p-5">
+                    <span className="font-mono text-[11px] text-accent">{post.category}</span>
+                    <h3 className="text-sm leading-snug text-ink">{post.title}</h3>
+                  </div>
+                </Link>
+              </Reveal>
+            ))}
+          </div>
+
+          <Link
+            href="/blog"
+            className="group inline-flex w-fit items-center gap-2 pl-9 text-sm text-accent hover:text-accent-hover"
+          >
+            Read all posts
+            <ArrowRight size={14} className="transition-transform group-hover:translate-x-1" />
+          </Link>
+        </section>
 
         {/* Final CTA */}
         <Reveal>

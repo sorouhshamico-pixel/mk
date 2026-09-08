@@ -228,7 +228,7 @@ export const contact = {
 export const blog = {
   heading: "Notes on building fast web products.",
   subhead:
-    "Writing about technical SEO, Laravel and Next.js performance, and what it actually takes to ship stores and content platforms that hold up. First posts landing soon.",
+    "Technical SEO, performance, and platform choices — written from actual client work, not theory.",
 };
 
 // brand/CONTENT.en.md — "SEO copy" table, extended with Blog.

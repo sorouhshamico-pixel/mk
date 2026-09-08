@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#14201C"/>
+      <stop offset="100%" stop-color="#0C1512"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="50%" r="65%">
+      <stop offset="0%" stop-color="#0F3B2E" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#0F3B2E" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#glow)"/>
+  <rect x="328" y="145" width="52" height="52" rx="12" fill="#35B98C" opacity="0.26088563100137174"/><rect x="600" y="145" width="52" height="52" rx="12" fill="#35B98C" opacity="0.11896604938271606"/><rect x="736" y="145" width="52" height="52" rx="12" fill="#35B98C" opacity="0.14776491769547326"/><rect x="804" y="145" width="52" height="52" rx="12" fill="#35B98C" opacity="0.2485999657064472"/><rect x="328" y="213" width="52" height="52" rx="12" fill="#35B98C" opacity="0.18379715363511662"/><rect x="464" y="213" width="52" height="52" rx="12" fill="#35B98C" opacity="0.16892318244170096"/><rect x="532" y="213" width="52" height="52" rx="12" fill="#35B98C" opacity="0.13138374485596707"/><rect x="600" y="213" width="52" height="52" rx="12" fill="#35B98C" opacity="0.10351508916323732"/><rect x="668" y="213" width="52" height="52" rx="12" fill="#35B98C" opacity="0.0877863511659808"/><rect x="804" y="213" width="52" height="52" rx="12" fill="#35B98C" opacity="0.18819015775034292"/><rect x="328" y="281" width="52" height="52" rx="12" fill="#35B98C" opacity="0.21083590534979424"/><rect x="396" y="281" width="52" height="52" rx="12" fill="#35B98C" opacity="0.15426354595336078"/><rect x="464" y="281" width="52" height="52" rx="12" fill="#35B98C" opacity="0.08760888203017833"/><rect x="600" y="281" width="52" height="52" rx="12" fill="#35B98C" opacity="0.2532904663923183"/><rect x="736" y="281" width="52" height="52" rx="12" fill="#35B98C" opacity="0.20739797668038407"/><rect x="804" y="281" width="52" height="52" rx="12" fill="#35B98C" opacity="0.15473508230452676"/><rect x="328" y="349" width="52" height="52" rx="12" fill="#35B98C" opacity="0.23766889574759947"/><rect x="396" y="349" width="52" height="52" rx="12" fill="#35B98C" opacity="0.2142241083676269"/><rect x="532" y="349" width="52" height="52" rx="12" fill="#35B98C" opacity="0.2336093964334705"/><rect x="600" y="349" width="52" height="52" rx="12" fill="#35B98C" opacity="0.207798353909465"/><rect x="668" y="349" width="52" height="52" rx="12" fill="#35B98C" opacity="0.2286951303155007"/><rect x="328" y="417" width="52" height="52" rx="12" fill="#35B98C" opacity="0.12419238683127573"/><rect x="464" y="417" width="52" height="52" rx="12" fill="#35B98C" opacity="0.25669495884773663"/><rect x="532" y="417" width="52" height="52" rx="12" fill="#35B98C" opacity="0.11555469821673525"/><rect x="600" y="417" width="52" height="52" rx="12" fill="#35B98C" opacity="0.22359139231824415"/><rect x="668" y="417" width="52" height="52" rx="12" fill="#35B98C" opacity="0.08697788065843622"/><rect x="736" y="417" width="52" height="52" rx="12" fill="#35B98C" opacity="0.11559070644718794"/>
+
+  <text x="48" y="56" font-family="Helvetica Neue, Arial, sans-serif" font-size="14" letter-spacing="3" fill="#35B98C">PLATFORMS</text>
+  <rect x="48" y="72" width="36" height="3" rx="1.5" fill="#35B98C"/>
+
+  
+  <g transform="translate(1050,552) scale(1.15)" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <path d="M6 37 L6 11 L17 24 L28 11 L28 37" stroke="#F1EFE8" opacity="0.85"/>
+    <path d="M36 11 L36 37 M36 24 L50 11 M36 24 L50 37" stroke="#35B98C"/>
+    <circle cx="57" cy="6" r="3.5" fill="#35B98C" stroke="none"/>
+  </g>
+</svg>

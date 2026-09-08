@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
-import { PenLine } from "lucide-react";
+import Link from "next/link";
+import Image from "next/image";
 import Reveal from "@/components/Reveal";
 import { blog, seo, site } from "@/lib/site";
+import { sortedPosts } from "@/lib/posts";
 
 export const metadata: Metadata = {
   title: seo.blog.title,
@@ -9,6 +11,10 @@ export const metadata: Metadata = {
   alternates: { canonical: `${site.url}/blog` },
   openGraph: { title: seo.blog.title, description: seo.blog.description, url: `${site.url}/blog` },
 };
+
+function formatDate(iso: string) {
+  return new Date(iso).toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" });
+}
 
 export default function BlogPage() {
   const breadcrumbJsonLd = {
@@ -36,22 +42,38 @@ export default function BlogPage() {
           </div>
         </Reveal>
 
-        <Reveal>
-          <div className="flex flex-col items-center gap-4 rounded-2xl border-[0.5px] border-hairline bg-surface px-8 py-16 text-center shadow-md">
-            <div className="flex h-12 w-12 items-center justify-center rounded-full bg-accent-soft text-accent">
-              <PenLine size={22} />
-            </div>
-            <p className="text-lg text-ink">The first posts are being written.</p>
-            <p className="max-w-[420px] text-sm text-secondary">
-              Arabic technical SEO, Laravel performance notes, and what building content platforms
-              in Arabic actually involves — RTL, slugs, search. Check back soon, or{" "}
-              <a href="/contact" className="text-accent hover:text-accent-hover">
-                get in touch
-              </a>{" "}
-              if there&apos;s something specific you&apos;d want covered.
-            </p>
-          </div>
-        </Reveal>
+        <div className="grid gap-8 sm:grid-cols-2">
+          {sortedPosts.map((post, i) => (
+            <Reveal key={post.slug} delay={i * 80}>
+              <Link
+                href={`/blog/${post.slug}`}
+                className="hover-lift group flex h-full flex-col overflow-hidden rounded-xl border-[0.5px] border-hairline bg-surface shadow-md hover:border-accent/40 hover:shadow-2xl hover:shadow-accent/10"
+              >
+                <div className="relative aspect-[1200/630] w-full overflow-hidden">
+                  <Image
+                    src={post.cover}
+                    alt=""
+                    fill
+                    sizes="(min-width: 640px) 50vw, 100vw"
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    unoptimized
+                  />
+                </div>
+                <div className="flex flex-1 flex-col gap-3 p-6">
+                  <div className="flex items-center gap-3 font-mono text-xs text-muted">
+                    <span className="text-accent">{post.category}</span>
+                    <span aria-hidden="true">·</span>
+                    <time dateTime={post.date}>{formatDate(post.date)}</time>
+                    <span aria-hidden="true">·</span>
+                    <span>{post.readingTime}</span>
+                  </div>
+                  <h2 className="text-lg text-ink">{post.title}</h2>
+                  <p className="text-sm leading-[1.7] text-secondary">{post.excerpt}</p>
+                </div>
+              </Link>
+            </Reveal>
+          ))}
+        </div>
       </section>
     </>
   );
