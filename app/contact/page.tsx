@@ -1,11 +1,17 @@
 import type { Metadata } from "next";
-import { Mail, MessageCircle, Briefcase } from "lucide-react";
+import { Mail, MessageCircle, Briefcase, Clock } from "lucide-react";
 import ContactForm from "@/components/ContactForm";
+import StatusBadge from "@/components/StatusBadge";
 import Reveal from "@/components/Reveal";
 import GithubIcon from "@/components/icons/GithubIcon";
-import { contact, seo, site } from "@/lib/site";
+import { contact, seo, site, stats } from "@/lib/site";
 
 const icons = { Mail, MessageCircle, Github: GithubIcon, Briefcase };
+
+const trust = [
+  { icon: Clock, label: "Replies within 1 business day" },
+  ...stats.filter((s) => s.label === "Client rehire rate" || s.label === "Communication rating"),
+];
 
 export const metadata: Metadata = {
   title: seo.contact.title,
@@ -30,16 +36,63 @@ export default function ContactPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
-      <section className="mx-auto grid max-w-[1200px] gap-14 px-6 py-16 sm:py-24 md:grid-cols-[1fr_1.2fr]">
-        <Reveal>
-          <div className="flex flex-col gap-6">
-            <div className="flex flex-col gap-3">
-              <h1 className="text-3xl font-medium tracking-[-0.02em] text-ink sm:text-4xl">
-                {contact.heading}
-              </h1>
-              <p className="text-[15px] leading-[1.7] text-secondary">{contact.subhead}</p>
-            </div>
 
+      {/* Hero */}
+      <section className="relative overflow-hidden">
+        <div
+          aria-hidden="true"
+          className="animate-blob pointer-events-none absolute -top-32 right-[-15%] h-[440px] w-[440px] rounded-full bg-accent/20 blur-3xl"
+        />
+        <div
+          aria-hidden="true"
+          className="animate-blob pointer-events-none absolute -bottom-32 left-[-15%] h-[360px] w-[360px] rounded-full bg-accent/10 blur-3xl"
+          style={{ animationDelay: "2s" }}
+        />
+
+        <div className="relative mx-auto flex max-w-[1200px] flex-col gap-6 px-6 py-16 sm:py-24">
+          <Reveal>
+            <StatusBadge />
+          </Reveal>
+
+          <Reveal delay={80}>
+            <h1 className="text-[clamp(36px,6vw,64px)] font-medium leading-[1.05] tracking-[-0.02em] text-ink">
+              Have a project?
+              <br />
+              <span className="text-accent">Let&apos;s talk.</span>
+            </h1>
+          </Reveal>
+
+          <Reveal delay={140}>
+            <p className="max-w-[520px] text-[15px] leading-[1.7] text-secondary sm:text-lg">
+              {contact.subhead}
+            </p>
+          </Reveal>
+
+          <Reveal delay={200}>
+            <div className="flex flex-wrap gap-3 pt-2">
+              {trust.map((t) => (
+                <div
+                  key={t.label}
+                  className="flex items-center gap-2 rounded-full border-[0.5px] border-hairline bg-surface px-4 py-2 text-xs text-secondary shadow-sm"
+                >
+                  {"icon" in t ? (
+                    <t.icon size={13} className="text-accent" />
+                  ) : (
+                    <span className="font-mono text-ink">{t.value}</span>
+                  )}
+                  {t.label}
+                </div>
+              ))}
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* Links + form */}
+      <section className="mx-auto grid max-w-[1200px] gap-14 px-6 pb-16 sm:pb-24 md:grid-cols-[1fr_1.2fr]">
+        <Reveal>
+          <div className="flex flex-col gap-4">
+            <h2 className="text-[11px] uppercase tracking-[0.14em] text-muted">Reach me directly.</h2>
             <div className="flex flex-col gap-2">
               {contact.links.map((l) => {
                 const Icon = icons[l.icon as keyof typeof icons];
