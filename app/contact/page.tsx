@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
-import { Mail, MessageCircle, Briefcase, Clock } from "lucide-react";
+import { Mail, Briefcase, Clock } from "lucide-react";
 import ContactForm from "@/components/ContactForm";
 import StatusBadge from "@/components/StatusBadge";
 import Reveal from "@/components/Reveal";
 import GithubIcon from "@/components/icons/GithubIcon";
+import WhatsAppIcon from "@/components/icons/WhatsAppIcon";
 import { contact, seo, site, stats } from "@/lib/site";
 
-const icons = { Mail, MessageCircle, Github: GithubIcon, Briefcase };
+const icons = { Mail, WhatsApp: WhatsAppIcon, Github: GithubIcon, Briefcase };
 
 const trust = [
   { icon: Clock, label: "Replies within 1 business day" },
@@ -107,7 +108,10 @@ export default function ContactPage() {
                     <div className="flex h-8 w-8 items-center justify-center rounded-full bg-accent-soft text-accent">
                       <Icon size={15} />
                     </div>
-                    <span className="text-sm text-ink">{l.label}</span>
+                    <span className="flex flex-col">
+                      <span className="text-sm text-ink">{l.label}</span>
+                      <span className="font-mono text-xs text-secondary">{l.value}</span>
+                    </span>
                   </a>
                 );
               })}

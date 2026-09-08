@@ -10,7 +10,10 @@ export const site = {
   url: "https://mohamedkhalifa.dev", // matches brand/og-image.svg; update if the real domain differs
   email: "mmd1790@gmail.com",
   phone: "+966532719336",
-  location: "Cairo, Egypt",
+  phoneDisplay: "+966 53 271 9336",
+  // Current residence, per Mohamed directly (supersedes the Cairo address
+  // on mohamedkhalifa.netlify.app, which is now out of date).
+  location: "Riyadh, Saudi Arabia",
   github: "https://github.com/mgkh286",
   mostaql: "https://mostaql.com/u/M1_m2",
   // Freelancing professionally since the Hsoub/Mostaql years began (source:
@@ -27,12 +30,15 @@ export const nav = [
 ];
 
 export const hero = {
-  lead: "I build",
-  // Cycles in the animated word slot — components/RotatingWord.tsx.
-  rotating: ["content platforms", "interactive tools", "job platforms", "e-commerce stores"],
-  tail: "that win in Arabic search.",
+  // Original big-headline format restored — lead / rotating word / tail,
+  // same as the first version — with the rotating slot now cycling the
+  // real platforms Mohamed builds on instead of content-type words, and
+  // no Arabic-specific framing.
+  lead: "I'm Mohamed Khalifa —",
+  roles: ["WordPress", "Salla", "Zid", "Shopify"],
+  tail: "developer.",
   subhead:
-    "Full-stack developer based in Cairo. Eight years turning briefs into fast, Arabic-first products — from a Saudi job platform with five labour-law calculators to dozens of stores and corporate sites across the Gulf.",
+    "Full-stack developer based in Riyadh. I turn briefs into fast, dependable products — from a Saudi job platform built solo to dozens of stores and corporate sites across the Gulf.",
   primaryCta: { label: "View work", href: "#work" },
   secondaryCta: { label: "Get in touch", href: "/contact" },
   stack: ["Laravel", "Next.js", "PHP", "TypeScript", "Tailwind", "MySQL"],
@@ -94,7 +100,7 @@ export const about = {
   pullQuote:
     "A fast site nobody can find is not a finished project, and a visible site that takes six seconds to paint loses its reader before the first sentence.",
   bio: [
-    "I'm Mohamed Khalifa, a full-stack web developer based in Cairo. I work on content platforms and interactive tools in Arabic, and I care most about the seam where engineering meets discoverability.",
+    "I'm Mohamed Khalifa, a full-stack web developer based in Riyadh. I build content platforms, e-commerce stores, and interactive tools, and I care most about the seam where engineering meets discoverability.",
     "My most recent launch is Wazifatk, a Saudi job platform I built alone from the database schema to the last detail of the interface.",
   ],
   // Real chronology (mohamedkhalifa.netlify.app) narrated in full — not new
@@ -146,7 +152,7 @@ export const about = {
     {
       label: "Platforms",
       icon: "ShoppingBag",
-      items: ["WordPress", "WooCommerce", "Shopify", "Salla", "Webflow"],
+      items: ["WordPress", "WooCommerce", "Shopify", "Salla", "Zid", "Webflow"],
     },
     {
       label: "Performance & SEO",
@@ -207,17 +213,22 @@ export const contact = {
     "I reply within one business day. Describe the idea in two lines and I'll tell you honestly whether I'm the right person for it.",
   projectTypes: ["Content platform", "Store", "Tool", "Other"],
   links: [
-    { label: "Email", href: `mailto:${site.email}`, icon: "Mail" },
-    { label: "WhatsApp", href: `https://wa.me/${site.phone.replace("+", "")}`, icon: "MessageCircle" },
-    { label: "GitHub", href: site.github, icon: "Github" },
-    { label: "Mostaql", href: site.mostaql, icon: "Briefcase" },
+    { label: "Email", value: site.email, href: `mailto:${site.email}`, icon: "Mail" },
+    {
+      label: "WhatsApp",
+      value: site.phoneDisplay,
+      href: `https://wa.me/${site.phone.replace("+", "")}`,
+      icon: "WhatsApp",
+    },
+    { label: "GitHub", value: "@mgkh286", href: site.github, icon: "Github" },
+    { label: "Mostaql", value: "28+ projects", href: site.mostaql, icon: "Briefcase" },
   ],
 };
 
 export const blog = {
-  heading: "Notes on Arabic content platforms.",
+  heading: "Notes on building fast web products.",
   subhead:
-    "Writing about technical SEO, Laravel performance, and the specifics of building for Arabic — RTL, slugs, search. First posts landing soon.",
+    "Writing about technical SEO, Laravel and Next.js performance, and what it actually takes to ship stores and content platforms that hold up. First posts landing soon.",
 };
 
 // brand/CONTENT.en.md — "SEO copy" table, extended with Blog.
@@ -225,21 +236,21 @@ export const seo = {
   home: {
     title: "Mohamed Khalifa — Web Developer",
     description:
-      "Full-stack web developer building fast, search-optimised content platforms and interactive tools for the Arabic market.",
+      "Full-stack web developer building fast, search-optimised content platforms, e-commerce stores, and interactive tools.",
   },
   work: {
     title: "Projects — Mohamed Khalifa",
     description:
-      "Live web projects: Arabic content platforms and interactive tools, built for speed and discoverability.",
+      "Live web projects: content platforms, e-commerce stores, and interactive tools, built for speed and discoverability.",
   },
   blog: {
     title: "Blog — Mohamed Khalifa",
-    description: "Notes on Arabic content platforms, technical SEO, and shipping fast with Laravel and Next.js.",
+    description: "Notes on technical SEO, performance, and shipping fast with WordPress, Salla, Shopify, Laravel, and Next.js.",
   },
   about: {
     title: "About — Mohamed Khalifa",
     description:
-      "Full-stack developer specialising in Arabic content platforms, performance, and technical SEO.",
+      "Full-stack developer specialising in fast, search-optimised web products — content platforms, e-commerce stores, and interactive tools.",
   },
   contact: {
     title: "Contact — Mohamed Khalifa",

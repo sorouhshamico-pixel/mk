@@ -57,7 +57,7 @@ export default function Home() {
               <h1 className="text-[clamp(36px,7vw,80px)] font-medium uppercase leading-[1.03] tracking-[-0.02em] text-ink">
                 {hero.lead}
                 <br />
-                <RotatingWord words={hero.rotating} className="text-accent" />
+                <RotatingWord words={hero.roles} className="text-accent" />
                 <br />
                 <span className="text-secondary">{hero.tail}</span>
               </h1>
