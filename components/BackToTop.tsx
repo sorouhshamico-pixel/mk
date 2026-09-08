@@ -50,7 +50,7 @@ export default function BackToTop() {
       type="button"
       onClick={scrollToTop}
       aria-label="Back to top"
-      className={`fixed bottom-24 right-6 z-50 flex h-11 w-11 items-center justify-center rounded-full border-[0.5px] border-hairline bg-surface text-ink shadow-lg transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl ${
+      className={`fixed bottom-6 left-6 z-50 flex h-11 w-11 items-center justify-center rounded-full border-[0.5px] border-hairline bg-surface text-ink shadow-lg transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl ${
         visible ? "translate-y-0 opacity-100" : "pointer-events-none translate-y-3 opacity-0"
       }`}
     >
