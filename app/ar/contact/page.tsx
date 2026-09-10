@@ -4,10 +4,11 @@ import ContactForm from "@/components/ContactForm";
 import StatusBadge from "@/components/StatusBadge";
 import Reveal from "@/components/Reveal";
 import GithubIcon from "@/components/icons/GithubIcon";
+import LinkedinIcon from "@/components/icons/LinkedinIcon";
 import WhatsAppIcon from "@/components/icons/WhatsAppIcon";
 import { site, contact, statusBadge, stats, seo } from "@/lib/site.ar";
 
-const icons = { Mail, WhatsApp: WhatsAppIcon, Github: GithubIcon, Briefcase };
+const icons = { Mail, WhatsApp: WhatsAppIcon, Github: GithubIcon, Linkedin: LinkedinIcon, Briefcase };
 
 const trust = [
   { icon: Clock, label: "أرد خلال يوم عمل واحد" },

@@ -24,7 +24,7 @@ export default function Home() {
     url: site.url,
     email: site.email,
     address: { "@type": "PostalAddress", addressLocality: site.location },
-    sameAs: [site.github, site.mostaql],
+    sameAs: [site.linkedin, site.github, site.mostaql],
   };
 
   const [featureItem, ...restItems] = whatIDo;

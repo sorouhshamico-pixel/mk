@@ -19,8 +19,9 @@ export async function generateMetadata({
   if (!project) return {};
 
   const url = `${site.url}/work/${project.slug}`;
-  // Only Wazifatk has an Arabic translation so far (brand/BRIEF.md §3).
-  const arUrl = project.slug === "wazifatk" ? `${site.url}/ar/work/wazifatk` : undefined;
+  // Case studies that also have an Arabic page (brand/BRIEF.md §3).
+  const arSlugs = ["wazifatk", "suruh-concrete", "hassan-haj"];
+  const arUrl = arSlugs.includes(project.slug) ? `${site.url}/ar/work/${project.slug}` : undefined;
   return {
     title: project.seo.title,
     description: project.seo.description,

@@ -31,7 +31,7 @@ export default function HomeAr() {
     url: `${site.url}/ar`,
     email: site.email,
     address: { "@type": "PostalAddress", addressLocality: site.locationAr },
-    sameAs: [site.github, site.mostaql],
+    sameAs: [site.linkedin, site.github, site.mostaql],
   };
 
   return (

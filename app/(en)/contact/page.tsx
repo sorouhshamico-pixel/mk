@@ -4,10 +4,11 @@ import ContactForm from "@/components/ContactForm";
 import StatusBadge from "@/components/StatusBadge";
 import Reveal from "@/components/Reveal";
 import GithubIcon from "@/components/icons/GithubIcon";
+import LinkedinIcon from "@/components/icons/LinkedinIcon";
 import WhatsAppIcon from "@/components/icons/WhatsAppIcon";
 import { contact, seo, site, stats } from "@/lib/site";
 
-const icons = { Mail, WhatsApp: WhatsAppIcon, Github: GithubIcon, Briefcase };
+const icons = { Mail, WhatsApp: WhatsAppIcon, Github: GithubIcon, Linkedin: LinkedinIcon, Briefcase };
 
 const trust = [
   { icon: Clock, label: "Replies within 1 business day" },

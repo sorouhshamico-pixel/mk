@@ -185,32 +185,63 @@ export const projects: Project[] = [
   },
 
   {
-    slug: "[project-slug-2]",
+    slug: "hassan-haj",
     index: 3,
-    name: "[Project name]",
-    tagline: "[three or four words]",
-    year: 2025,
-    primaryStack: "[tech]",
-    stack: ["[tech]", "[tech]"],
-    role: "[your role]",
-    timeline: "[duration]",
+    // الشيخ حسن عوض للحج والعمرة — an Egyptian Hajj & Umrah travel agency.
+    name: "Sheikh Hassan Awad",
+    tagline: "Hajj & Umrah agency site",
+    year: 2025, // [confirm launch year]
+    primaryStack: "Next.js",
+    stack: ["Next.js", "React", "Tailwind CSS", "Static export", "GitHub Pages"],
+    role: "Sole developer", // [confirm — full build, or front end only?]
+    timeline: "[weeks or months]",
     status: "live",
-    featured: false,
-    links: { live: "[https://...]" },
-    thumbnail: "/work/[slug-2]/thumb.webp",
-    cover: "/work/[slug-2]/cover.webp",
+    featured: true,
+    links: {
+      live: "https://hassanhaj.com",
+    },
+    thumbnail: "/work/hassan-haj/thumb.webp",
+    cover: "/work/hassan-haj/cover.webp",
     metrics: [
-      { label: "Role", value: "[your role]" },
+      { label: "Role", value: "Sole developer" },
       { label: "Timeline", value: "[duration]" },
+      { label: "Stack", value: "Next.js" },
+      { label: "Hosting", value: "Static / GitHub Pages" },
     ],
-    problem: "[...]",
-    decision: "[...]",
-    technical: [{ title: "[Decision]", body: "[...]" }],
-    results: ["[...]"],
-    learned: "[...]",
+    problem:
+      "Sheikh Hassan Awad runs Hajj and Umrah trips from Egypt with on-the-ground supervision, but families choosing a pilgrimage operator are making a high-trust, once-in-a-lifetime decision — and had nothing to look at beyond WhatsApp forwards. They needed to see the programme tiers, the itinerary, real photos from past trips, and clear answers to the questions that come up before booking.",
+    decision:
+      "Ship it as a fast static site, not a CMS the client would never log into. Next.js exported to static HTML and served from GitHub Pages — no server to maintain, no monthly hosting, near-instant loads on the mobile connections the audience actually uses. The whole site is structured around one job: move a hesitant visitor from 'is this trustworthy?' to a WhatsApp message.",
+    technical: [
+      {
+        title: "Next.js static export on GitHub Pages",
+        body: "No backend, no hosting bill, and a build that either passes or fails — nothing to rot between trips. The client updates content through the repo when a season's programmes change.",
+      },
+      {
+        title: "Arabic-first, RTL end to end",
+        body: "Built right-to-left from the layout up — Modern Standard Arabic throughout, for an audience that reads no English.",
+      },
+      {
+        title: "Trust-led information architecture",
+        body: "Programme comparison, a step-by-step ritual guide, a real photo gallery from previous trips, and an FAQ — the four things a family checks before committing, each on its own page.",
+      },
+      {
+        title: "WhatsApp as the primary conversion",
+        body: "Two WhatsApp numbers, a floating button, and an inline enquiry form. In this market the booking conversation happens on WhatsApp, so every page routes there.",
+      },
+    ],
+    results: [
+      "Static Arabic-first marketing site — home, Hajj, Umrah, programmes, guide, gallery, blog, FAQ, contact",
+      "Zero hosting cost, served from GitHub Pages",
+      "Programme comparison, ritual guide, and real trip photography as standalone sections",
+      "[add: enquiries or bookings before/after, if the client shares it]",
+    ],
+    learned:
+      "A static export was the right call for a client who was never going to touch a CMS — but it means every content change is a developer task, so the trade is a hosting bill for my time. For a seasonal business that's fine; for one that publishes weekly it wouldn't be. Worth deciding that explicitly up front rather than defaulting to WordPress.",
     seo: {
-      title: "[Project name] | Mohamed Khalifa",
-      description: "[...]",
+      title: "Sheikh Hassan Awad, a Hajj & Umrah agency site | Mohamed Khalifa",
+      description:
+        "A fast Arabic-first Next.js site for an Egyptian Hajj and Umrah operator, statically exported to GitHub Pages and built around WhatsApp conversion.",
     },
   },
 ];

@@ -1,13 +1,16 @@
 import { Mail, Briefcase } from "lucide-react";
 import Logo from "@/components/Logo";
 import GithubIcon from "@/components/icons/GithubIcon";
+import LinkedinIcon from "@/components/icons/LinkedinIcon";
 import { site, contact } from "@/lib/site.ar";
 
-const icons = { Mail, Github: GithubIcon, Briefcase };
+const icons = { Mail, Github: GithubIcon, Linkedin: LinkedinIcon, Briefcase };
 
 export default function FooterAr() {
   const year = new Date().getFullYear();
-  const socialLinks = contact.links.filter((l) => ["Mail", "Github", "Briefcase"].includes(l.icon));
+  const socialLinks = contact.links.filter((l) =>
+    ["Mail", "Github", "Linkedin", "Briefcase"].includes(l.icon)
+  );
 
   return (
     <footer className="border-t-[0.5px] border-hairline">

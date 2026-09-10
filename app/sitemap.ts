@@ -19,11 +19,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
     lastModified: new Date(p.date),
   }));
 
-  // Arabic locale (brand/BRIEF.md §3 phase two) — home, about, work index,
-  // the one translated case study, contact, and the blog stub.
-  const arabicRoutes: MetadataRoute.Sitemap = ["/ar", "/ar/about", "/ar/work", "/ar/work/wazifatk", "/ar/contact", "/ar/blog"].map(
-    (route) => ({ url: `${site.url}${route}`, lastModified: new Date() })
-  );
+  // Arabic locale (brand/BRIEF.md §3 phase two).
+  const arabicRoutes: MetadataRoute.Sitemap = [
+    "/ar",
+    "/ar/about",
+    "/ar/work",
+    "/ar/work/wazifatk",
+    "/ar/work/suruh-concrete",
+    "/ar/work/hassan-haj",
+    "/ar/contact",
+    "/ar/blog",
+  ].map((route) => ({ url: `${site.url}${route}`, lastModified: new Date() }));
 
   return [...staticRoutes, ...projectRoutes, ...postRoutes, ...arabicRoutes];
 }

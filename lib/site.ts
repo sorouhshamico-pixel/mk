@@ -16,6 +16,7 @@ export const site = {
   location: "Riyadh, Saudi Arabia",
   github: "https://github.com/mgkh286",
   mostaql: "https://mostaql.com/u/M1_m2",
+  linkedin: "https://www.linkedin.com/in/mohamed-khalifa-6a6b5b189/",
   // Freelancing professionally since the Hsoub/Mostaql years began (source:
   // mohamedkhalifa.netlify.app work history). Confirm/adjust if this isn't
   // the year you'd want quoted.
@@ -220,6 +221,7 @@ export const contact = {
       href: `https://wa.me/${site.phone.replace("+", "")}`,
       icon: "WhatsApp",
     },
+    { label: "LinkedIn", value: "in/mohamed-khalifa", href: site.linkedin, icon: "Linkedin" },
     { label: "GitHub", value: "@mgkh286", href: site.github, icon: "Github" },
     { label: "Mostaql", value: "28+ projects", href: site.mostaql, icon: "Briefcase" },
   ],

@@ -1,14 +1,17 @@
 import { Mail, Briefcase } from "lucide-react";
 import Logo from "./Logo";
 import GithubIcon from "./icons/GithubIcon";
+import LinkedinIcon from "./icons/LinkedinIcon";
 import { site, contact } from "@/lib/site";
 
-const icons = { Mail, Github: GithubIcon, Briefcase };
+const icons = { Mail, Github: GithubIcon, Linkedin: LinkedinIcon, Briefcase };
 
 // brand/BRIEF.md §4.7 — logo mark, one line of copy, links, year in mono.
 export default function Footer() {
   const year = new Date().getFullYear();
-  const socialLinks = contact.links.filter((l) => ["Mail", "Github", "Briefcase"].includes(l.icon));
+  const socialLinks = contact.links.filter((l) =>
+    ["Mail", "Github", "Linkedin", "Briefcase"].includes(l.icon)
+  );
 
   return (
     <footer className="border-t-[0.5px] border-hairline">
