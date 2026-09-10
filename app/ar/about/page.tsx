@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import {
   Server,
   Code2,
@@ -19,6 +18,7 @@ import {
   Waves,
 } from "lucide-react";
 import Reveal from "@/components/Reveal";
+import AboutPortrait from "@/components/AboutPortrait";
 import { site, about, seo } from "@/lib/site.ar";
 
 const skillIcons = { Server, Code2, ShoppingBag, Gauge, PenTool, Languages };
@@ -55,24 +55,9 @@ export default function AboutAr() {
           aria-hidden="true"
           className="animate-blob pointer-events-none absolute -top-32 left-1/2 h-[420px] w-[420px] -translate-x-1/2 rounded-full bg-accent/15 blur-3xl"
         />
-        <div className="relative mx-auto grid max-w-[1200px] gap-12 px-6 py-16 sm:py-24 md:grid-cols-[280px_1fr] md:items-center">
+        <div className="relative mx-auto grid max-w-[1200px] gap-12 px-6 py-16 sm:py-24 md:grid-cols-[300px_1fr] md:items-center">
           <Reveal>
-            <div className="relative mx-auto w-full max-w-[280px] md:mx-0">
-              <div
-                aria-hidden="true"
-                className="absolute -inset-3 rounded-[2rem] bg-gradient-to-br from-accent/25 via-accent/5 to-transparent blur-2xl"
-              />
-              <div className="relative overflow-hidden rounded-[1.5rem] border-[0.5px] border-hairline shadow-2xl">
-                <Image
-                  src="/mohamed-khalifa.jpg"
-                  alt={site.name}
-                  width={560}
-                  height={560}
-                  className="aspect-square w-full object-cover"
-                  priority
-                />
-              </div>
-            </div>
+            <AboutPortrait alt={site.name} />
           </Reveal>
 
           <Reveal delay={100}>

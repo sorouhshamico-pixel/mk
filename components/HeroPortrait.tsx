@@ -33,19 +33,19 @@ export default function HeroPortrait({
 
   return (
     <div className="relative mx-auto w-full max-w-[360px]" style={{ perspective: "1000px" }}>
-      {/* rotating accent ring */}
+      {/* slow accent halo — a soft breathing glow, not a hard rotating arc */}
       <div
         aria-hidden="true"
-        className="animate-spin-slow motion-reduce:animate-none pointer-events-none absolute -inset-5 rounded-[2.25rem] opacity-70"
+        className="animate-spin-slow motion-reduce:animate-none pointer-events-none absolute -inset-6 rounded-[2.5rem] opacity-30"
         style={{
           background:
-            "conic-gradient(from 0deg, var(--color-accent) 0deg, transparent 110deg, transparent 250deg, var(--color-accent) 360deg)",
-          filter: "blur(18px)",
+            "conic-gradient(from 0deg, var(--color-accent) 0deg, transparent 120deg, transparent 240deg, var(--color-accent) 360deg)",
+          filter: "blur(30px)",
         }}
       />
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -inset-4 rounded-[2rem] bg-gradient-to-br from-accent/30 via-accent/5 to-transparent blur-2xl"
+        className="pointer-events-none absolute -inset-4 rounded-[2rem] bg-gradient-to-br from-accent/20 via-accent/5 to-transparent blur-2xl"
       />
 
       <div
@@ -59,14 +59,29 @@ export default function HeroPortrait({
           src="/mohamed-khalifa.jpg"
           alt={name}
           width={720}
-          height={720}
+          height={900}
           priority
-          className="aspect-square w-full object-cover"
+          className="aspect-[4/5] w-full scale-[1.04] object-cover object-[50%_22%] grayscale contrast-[1.08] brightness-[0.98] transition-[filter,transform] duration-700 ease-out group-hover:scale-100 group-hover:grayscale-0"
+        />
+        {/* brand wash */}
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 bg-accent/15 mix-blend-overlay transition-opacity duration-700 group-hover:opacity-0"
+        />
+        {/* base fade into the page */}
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-x-0 bottom-0 h-2/5 bg-gradient-to-t from-paper via-paper/20 to-transparent"
+        />
+        {/* inner hairline highlight */}
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 rounded-[1.75rem] ring-1 ring-inset ring-white/[0.06]"
         />
         {/* light sweep on hover */}
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/15 to-transparent transition-transform duration-700 ease-out group-hover:translate-x-full"
+          className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/10 to-transparent transition-transform duration-700 ease-out group-hover:translate-x-full"
         />
       </div>
 
