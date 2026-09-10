@@ -9,7 +9,13 @@ import { site } from "@/lib/site";
  *  cursor-tracked 3D tilt, and a light sweep on hover. Falls back to a
  *  static (still shadowed/ringed) card under prefers-reduced-motion or
  *  on touch, since there's no cursor to tilt toward. */
-export default function HeroPortrait() {
+export default function HeroPortrait({
+  name = site.name,
+  location = site.location,
+}: {
+  name?: string;
+  location?: string;
+} = {}) {
   const ref = useRef<HTMLDivElement>(null);
   const [tilt, setTilt] = useState({ x: 0, y: 0 });
 
@@ -51,7 +57,7 @@ export default function HeroPortrait() {
       >
         <Image
           src="/mohamed-khalifa.jpg"
-          alt={site.name}
+          alt={name}
           width={720}
           height={720}
           priority
@@ -66,7 +72,7 @@ export default function HeroPortrait() {
 
       <div className="absolute -bottom-5 -right-5 flex items-center gap-2 rounded-full border-[0.5px] border-hairline bg-paper px-4 py-2 shadow-xl">
         <Sparkles size={14} className="text-accent" />
-        <span className="font-mono text-xs text-ink">{site.location}</span>
+        <span className="font-mono text-xs text-ink">{location}</span>
       </div>
     </div>
   );

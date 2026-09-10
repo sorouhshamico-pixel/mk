@@ -6,7 +6,7 @@ import Footer from "@/components/Footer";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
 import BackToTop from "@/components/BackToTop";
 import { site, seo } from "@/lib/site";
-import "./globals.css";
+import "../globals.css";
 
 // Inter Tight — all Latin text, weights 400/500 only (brand/BRIEF.md §2).
 // IBM Plex Sans Arabic loads only on the Arabic locale in phase two.
@@ -29,6 +29,10 @@ export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: { default: seo.home.title, template: `%s | ${site.name}` },
   description: seo.home.description,
+  alternates: {
+    canonical: site.url,
+    languages: { en: site.url, ar: `${site.url}/ar`, "x-default": site.url },
+  },
   openGraph: {
     title: seo.home.title,
     description: seo.home.description,

@@ -19,10 +19,12 @@ export async function generateMetadata({
   if (!project) return {};
 
   const url = `${site.url}/work/${project.slug}`;
+  // Only Wazifatk has an Arabic translation so far (brand/BRIEF.md §3).
+  const arUrl = project.slug === "wazifatk" ? `${site.url}/ar/work/wazifatk` : undefined;
   return {
     title: project.seo.title,
     description: project.seo.description,
-    alternates: { canonical: url },
+    alternates: { canonical: url, ...(arUrl && { languages: { en: url, ar: arUrl } }) },
     openGraph: { title: project.seo.title, description: project.seo.description, url },
   };
 }

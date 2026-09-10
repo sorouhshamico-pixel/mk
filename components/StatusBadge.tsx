@@ -4,7 +4,13 @@ import { statusBadge } from "@/lib/site";
 // 1 -> 0.4 -> 1 every 3s (pure CSS, respects prefers-reduced-motion via the
 // animate-none fallback below). Muted grey dot + different label when not
 // available, rather than hiding the badge.
-export default function StatusBadge() {
+export default function StatusBadge({
+  label: labelOverride,
+  unavailableLabel: unavailableOverride,
+}: {
+  label?: string;
+  unavailableLabel?: string;
+} = {}) {
   const { available, label, unavailableLabel } = statusBadge;
 
   return (
@@ -15,7 +21,9 @@ export default function StatusBadge() {
           available ? "bg-accent" : "bg-secondary"
         }`}
       />
-      <span className="text-[13px] text-secondary">{available ? label : unavailableLabel}</span>
+      <span className="text-[13px] text-secondary">
+        {available ? (labelOverride ?? label) : (unavailableOverride ?? unavailableLabel)}
+      </span>
     </div>
   );
 }

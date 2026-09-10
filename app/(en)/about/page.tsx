@@ -29,7 +29,10 @@ const storyEras = ["2011 — 2014", "2017 — 2018", "2018 — 2021", "2021 — 
 export const metadata: Metadata = {
   title: seo.about.title,
   description: seo.about.description,
-  alternates: { canonical: `${site.url}/about` },
+  alternates: {
+    canonical: `${site.url}/about`,
+    languages: { en: `${site.url}/about`, ar: `${site.url}/ar/about` },
+  },
   openGraph: { title: seo.about.title, description: seo.about.description, url: `${site.url}/about` },
 };
 

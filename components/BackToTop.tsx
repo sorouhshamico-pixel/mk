@@ -11,7 +11,7 @@ const CIRCUMFERENCE = 2 * Math.PI * RADIUS;
 /** Appears once the visitor has scrolled a bit, and doubles as a reading
  *  progress indicator — the ring around the arrow fills as the page
  *  scrolls, instead of a plain static button. */
-export default function BackToTop() {
+export default function BackToTop({ locale = "en" }: { locale?: "en" | "ar" }) {
   const [progress, setProgress] = useState(0);
   const [visible, setVisible] = useState(false);
   const ticking = useRef(false);
@@ -49,7 +49,7 @@ export default function BackToTop() {
     <button
       type="button"
       onClick={scrollToTop}
-      aria-label="Back to top"
+      aria-label={locale === "ar" ? "العودة لأعلى" : "Back to top"}
       className={`fixed bottom-6 left-6 z-50 flex h-11 w-11 items-center justify-center rounded-full border-[0.5px] border-hairline bg-surface text-ink shadow-lg transition-all duration-300 hover:-translate-y-0.5 hover:shadow-xl ${
         visible ? "translate-y-0 opacity-100" : "pointer-events-none translate-y-3 opacity-0"
       }`}

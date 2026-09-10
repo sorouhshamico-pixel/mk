@@ -7,11 +7,19 @@ import { site } from "@/lib/site";
 const WHATSAPP_GREEN = "#25D366";
 const WHATSAPP_GREEN_DARK = "#1DA851";
 
+const COPY = {
+  en: { greeting: "👋 Have a project? Message me on WhatsApp.", dismiss: "Dismiss", chat: "Chat on WhatsApp" },
+  ar: { greeting: "👋 عندك مشروع؟ راسلني على واتساب.", dismiss: "إغلاق", chat: "تواصل عبر واتساب" },
+};
+
 /** A floating WhatsApp button, bottom-right, on every page. Two pulsing
  *  sonar rings behind it (motion-safe only), a one-time greeting bubble a
  *  couple of seconds after the page settles, and the icon itself wiggles
- *  on hover/focus — no expanding label, just that one animation. */
-export default function WhatsAppFloat() {
+ *  on hover/focus — no expanding label, just that one animation. Stays in
+ *  the same physical bottom-right corner regardless of locale — floating
+ *  action buttons anchor to the viewport, not to text direction. */
+export default function WhatsAppFloat({ locale = "en" }: { locale?: "en" | "ar" }) {
+  const t = COPY[locale];
   const [showBubble, setShowBubble] = useState(false);
   const [dismissed, setDismissed] = useState(false);
 
@@ -33,10 +41,10 @@ export default function WhatsAppFloat() {
           className="fade-up-in flex max-w-[220px] items-start gap-2 rounded-2xl rounded-br-sm border-[0.5px] border-hairline bg-surface px-4 py-3 text-sm text-ink shadow-2xl"
           role="status"
         >
-          <span>👋 Have a project? Message me on WhatsApp.</span>
+          <span>{t.greeting}</span>
           <button
             type="button"
-            aria-label="Dismiss"
+            aria-label={t.dismiss}
             onClick={() => setDismissed(true)}
             className="shrink-0 text-muted hover:text-ink"
           >
@@ -62,7 +70,7 @@ export default function WhatsAppFloat() {
           href={href}
           target="_blank"
           rel="noopener noreferrer"
-          aria-label={`Chat on WhatsApp — ${site.phoneDisplay}`}
+          aria-label={`${t.chat} — ${site.phoneDisplay}`}
           onMouseEnter={() => setDismissed(true)}
           className="relative z-10 flex h-14 w-14 items-center justify-center rounded-full text-white shadow-2xl transition-shadow hover:shadow-[0_0_0_6px_rgba(37,211,102,0.18)]"
           style={{ background: `linear-gradient(135deg, ${WHATSAPP_GREEN}, ${WHATSAPP_GREEN_DARK})` }}

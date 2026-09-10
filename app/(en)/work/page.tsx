@@ -1,14 +1,17 @@
 import type { Metadata } from "next";
-import ProjectCard from "@/components/ProjectCard";
+import ProjectShowcase from "@/components/ProjectShowcase";
 import Reveal from "@/components/Reveal";
 import { seo, site } from "@/lib/site";
-import { readyProjects, hasPublicAsset } from "@/lib/projects";
+import { readyProjects } from "@/lib/projects";
 import { otherWork } from "@/lib/other-work";
 
 export const metadata: Metadata = {
   title: seo.work.title,
   description: seo.work.description,
-  alternates: { canonical: `${site.url}/work` },
+  alternates: {
+    canonical: `${site.url}/work`,
+    languages: { en: `${site.url}/work`, ar: `${site.url}/ar/work` },
+  },
   openGraph: { title: seo.work.title, description: seo.work.description, url: `${site.url}/work` },
 };
 
@@ -38,10 +41,23 @@ export default function WorkPage() {
           </div>
         </Reveal>
 
-        <div className="grid gap-6 sm:grid-cols-2">
+        <div className="flex flex-col gap-16 sm:gap-24">
           {readyProjects.map((project, i) => (
-            <Reveal key={project.slug} delay={i * 100}>
-              <ProjectCard project={project} coverAvailable={hasPublicAsset(project.cover)} />
+            <Reveal key={project.slug} delay={i * 80}>
+              <ProjectShowcase
+                index={i + 1}
+                flip={i % 2 === 1}
+                href={`/work/${project.slug}`}
+                item={{
+                  slug: project.slug,
+                  name: project.name,
+                  tagline: project.tagline,
+                  year: project.year,
+                  status: project.status,
+                  stack: project.stack,
+                  liveUrl: project.links.live,
+                }}
+              />
             </Reveal>
           ))}
         </div>

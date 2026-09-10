@@ -23,10 +23,12 @@ export default function RotatingWord({
   words,
   className,
   interval = 2400,
+  dir,
 }: {
   words: string[];
   className?: string;
   interval?: number;
+  dir?: "ltr" | "rtl";
 }) {
   const [index, setIndex] = useState(0);
   const [entering, setEntering] = useState(true);
@@ -51,6 +53,7 @@ export default function RotatingWord({
 
   return (
     <span
+      dir={dir}
       className={`inline-block transition-all duration-300 ease-out ${
         entering ? "translate-y-0 opacity-100" : "-translate-y-2 opacity-0"
       } ${className ?? ""}`}

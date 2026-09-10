@@ -2,14 +2,14 @@ import Link from "next/link";
 import Image from "next/image";
 import { Newspaper, Calculator, SearchCheck, ArrowRight } from "lucide-react";
 import StatusBadge from "@/components/StatusBadge";
-import ProjectCard from "@/components/ProjectCard";
+import ProjectShowcase from "@/components/ProjectShowcase";
 import Reveal from "@/components/Reveal";
 import RotatingWord from "@/components/RotatingWord";
 import HeroPortrait from "@/components/HeroPortrait";
 import AmbientGlow from "@/components/AmbientGlow";
 import SectionMark from "@/components/SectionMark";
 import { hero, whatIDo, workSection, site, contact, stats, blog, intro } from "@/lib/site";
-import { readyFeaturedProjects, hasPublicAsset } from "@/lib/projects";
+import { readyFeaturedProjects } from "@/lib/projects";
 import { otherWork } from "@/lib/other-work";
 import { sortedPosts } from "@/lib/posts";
 
@@ -178,10 +178,23 @@ export default function Home() {
             </div>
           </Reveal>
 
-          <div className="grid gap-6 sm:grid-cols-2">
+          <div className="flex flex-col gap-16 sm:gap-24">
             {readyFeaturedProjects.map((project, i) => (
-              <Reveal key={project.slug} delay={i * 100}>
-                <ProjectCard project={project} coverAvailable={hasPublicAsset(project.cover)} />
+              <Reveal key={project.slug} delay={i * 80}>
+                <ProjectShowcase
+                  index={i + 1}
+                  flip={i % 2 === 1}
+                  href={`/work/${project.slug}`}
+                  item={{
+                    slug: project.slug,
+                    name: project.name,
+                    tagline: project.tagline,
+                    year: project.year,
+                    status: project.status,
+                    stack: project.stack,
+                    liveUrl: project.links.live,
+                  }}
+                />
               </Reveal>
             ))}
           </div>

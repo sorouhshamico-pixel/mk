@@ -124,48 +124,63 @@ export const projects: Project[] = [
   },
 
   {
-    slug: "[project-slug]",
+    slug: "suruh-concrete",
     index: 2,
-    name: "[Project name]",
-    tagline: "[three or four words]",
-    year: 2025,
-    primaryStack: "[Laravel | Next.js | WordPress]",
-    stack: ["[tech]", "[tech]", "[tech]"],
-    role: "[Sole developer | Frontend | Backend]",
+    // Surooh Al-Shami Company Ltd. (صروح الشامي) — trades online as "Suruh Concrete".
+    name: "Suruh Concrete",
+    tagline: "Ready-mix concrete supplier",
+    year: 2025, // [confirm launch year]
+    primaryStack: "WordPress",
+    stack: ["WordPress", "Elementor", "Blocksy", "PHP", "MySQL"],
+    role: "Sole developer", // [confirm — full build, or front end only?]
     timeline: "[weeks or months]",
     status: "live",
     featured: true,
     links: {
-      live: "[https://...]",
-      repo: "[https://github.com/... or remove this line]",
+      live: "https://suruhconcrete.com",
     },
-    thumbnail: "/work/[slug]/thumb.webp",
-    cover: "/work/[slug]/cover.webp",
+    thumbnail: "/work/suruh-concrete/thumb.webp",
+    cover: "/work/suruh-concrete/cover.webp",
     metrics: [
-      { label: "Role", value: "[your role]" },
+      { label: "Role", value: "Sole developer" },
       { label: "Timeline", value: "[duration]" },
-      { label: "[a number that matters]", value: "[value]" },
-      { label: "[another number]", value: "[value]" },
+      { label: "Platform", value: "WordPress" },
+      { label: "Direction", value: "RTL / Arabic" },
     ],
     problem:
-      "[Who had the problem and what did it cost them. Two or three sentences, concrete. Avoid 'the client wanted a modern website'.]",
+      "Surooh Al-Shami supplies ready-mix concrete and runs general-contracting projects across Riyadh, but had no owned presence online — enquiries came only through phone and scattered WhatsApp forwards. In a market where contractors vet a supplier's scale and past work before requesting a quote, that meant losing jobs before a conversation ever started.",
     decision:
-      "[The one call that shaped everything else, and why you made it. This is the paragraph clients read most closely.]",
+      "Build the site as a lead engine, not a brochure. Every page ends in the same two actions — request a quote, or open WhatsApp — and the project portfolio is treated as the primary sales asset: real site photos, location, and scope for each completed job, so a contractor can judge capability at a glance and arrive at the quote form already convinced.",
     technical: [
-      { title: "[Decision]", body: "[What you did and the constraint behind it.]" },
-      { title: "[Decision]", body: "[What you did and the constraint behind it.]" },
-      { title: "[Decision]", body: "[What you did and the constraint behind it.]" },
+      {
+        title: "WordPress + Elementor on the Blocksy theme",
+        body: "A page-builder stack the client's own team can extend — adding a project or a blog post is a form, not a deploy — without giving up control of the templates or the markup that search engines read.",
+      },
+      {
+        title: "Arabic-first, RTL throughout",
+        body: "Layout, navigation, and typography are built right-to-left from the start rather than mirrored after the fact, so the Arabic reading order holds on every breakpoint.",
+      },
+      {
+        title: "WhatsApp as a first-class channel",
+        body: "A floating WhatsApp button and inline contact CTAs sit on every template. In Saudi B2B construction the first contact almost always happens on WhatsApp, so the site is built to hand the visitor straight to it.",
+      },
+      {
+        title: "LiteSpeed caching and lazy media",
+        body: "Server-side caching plus lazy-loaded images keep a photo-heavy portfolio site fast on a mobile connection, which is where most site managers open it.",
+      },
     ],
     results: [
-      "[number] [unit]",
-      "[a before-and-after if you have one]",
-      "[Core Web Vitals or load time]",
+      "Full bilingual (Arabic-first) marketing site — home, about, services, projects, FAQ, blog, contact",
+      "Project portfolio with a dedicated case entry per completed job",
+      "Quote-request and WhatsApp CTAs on every page",
+      "[add: enquiries or traffic before/after, if the client shares it]",
     ],
     learned:
-      "[One honest thing you would do differently, and one thing you got right. Honesty reads as seniority.]",
+      "On a page-builder handover the real deliverable is the editing model, not the pixels: spend the time making 'add a project' genuinely one screen and the client keeps the site alive; leave it fiddly and it goes stale in a month. Next time I'd lock the portfolio content type down even tighter before styling anything on top of it.",
     seo: {
-      title: "[Project name] | Mohamed Khalifa",
-      description: "[One sentence: what you built, for whom, with what.]",
+      title: "Suruh Concrete, a ready-mix concrete supplier site | Mohamed Khalifa",
+      description:
+        "An Arabic-first WordPress marketing site for a Riyadh ready-mix concrete and contracting company, built as a lead engine around a project portfolio.",
     },
   },
 
