@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Script from "next/script";
-import { Inter_Tight, IBM_Plex_Sans_Arabic, JetBrains_Mono } from "next/font/google";
+import { Inter_Tight, Noto_Kufi_Arabic, JetBrains_Mono } from "next/font/google";
 import HeaderAr from "@/components/ar/Header";
 import FooterAr from "@/components/ar/Footer";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
@@ -11,8 +11,8 @@ import "../globals.css";
 // This is its own root layout (own <html>/<body>) — a sibling of
 // app/(en)/layout.tsx, not nested under it — so dir="rtl" lang="ar" can be
 // set here directly. See Next.js "multiple root layouts" for the pattern.
-// brand/BRIEF.md §2: IBM Plex Sans Arabic loads only on the Arabic locale —
-// this is that locale.
+// brand/BRIEF.md §2: the Arabic display face (Noto Kufi Arabic) loads only on
+// the Arabic locale — this is that locale.
 const interTight = Inter_Tight({
   variable: "--font-inter-tight",
   subsets: ["latin"],
@@ -20,8 +20,8 @@ const interTight = Inter_Tight({
   display: "swap",
 });
 
-const ibmPlexArabic = IBM_Plex_Sans_Arabic({
-  variable: "--font-ibm-plex-arabic",
+const notoKufiArabic = Noto_Kufi_Arabic({
+  variable: "--font-noto-kufi-arabic",
   subsets: ["arabic"],
   weight: ["400", "500"],
   display: "swap",
@@ -70,12 +70,12 @@ export default function ArabicRootLayout({ children }: LayoutProps<"/ar">) {
     <html
       lang="ar"
       dir="rtl"
-      className={`${interTight.variable} ${ibmPlexArabic.variable} ${jetbrainsMono.variable} antialiased`}
+      className={`${interTight.variable} ${notoKufiArabic.variable} ${jetbrainsMono.variable} antialiased`}
       suppressHydrationWarning
     >
       <body
         className="flex min-h-screen flex-col"
-        style={{ fontFamily: "var(--font-ibm-plex-arabic), var(--font-inter-tight), system-ui, sans-serif" }}
+        style={{ fontFamily: "var(--font-noto-kufi-arabic), var(--font-inter-tight), system-ui, sans-serif" }}
       >
         <Script id="theme-init" strategy="beforeInteractive">
           {themeInitScript}

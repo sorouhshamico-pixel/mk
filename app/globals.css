@@ -32,7 +32,7 @@
 }
 
 /* Fonts — next/font sets these custom properties in app/layout.tsx.
-   IBM Plex Sans Arabic loads only on the Arabic locale in phase two. */
+   Noto Kufi Arabic loads only on the Arabic locale (app/ar/layout.tsx). */
 @theme inline {
   --font-sans: var(--font-inter-tight), sans-serif;
   --font-mono: var(--font-jetbrains-mono), monospace;
