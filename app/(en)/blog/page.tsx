@@ -8,7 +8,10 @@ import { sortedPosts } from "@/lib/posts";
 export const metadata: Metadata = {
   title: seo.blog.title,
   description: seo.blog.description,
-  alternates: { canonical: `${site.url}/blog` },
+  alternates: {
+    canonical: `${site.url}/blog`,
+    languages: { en: `${site.url}/blog`, ar: `${site.url}/ar/blog`, "x-default": `${site.url}/blog` },
+  },
   openGraph: { title: seo.blog.title, description: seo.blog.description, url: `${site.url}/blog` },
 };
 

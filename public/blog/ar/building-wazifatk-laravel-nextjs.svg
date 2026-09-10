@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#14201C"/>
+      <stop offset="100%" stop-color="#0C1512"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="50%" r="65%">
+      <stop offset="0%" stop-color="#0F3B2E" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#0F3B2E" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#glow)"/>
+  <line x1="340" y1="255" x2="540" y2="175" stroke="#35B98C" stroke-width="1.5" opacity="0.3"/><line x1="540" y1="175" x2="780" y2="225" stroke="#35B98C" stroke-width="1.5" opacity="0.3"/><line x1="780" y1="225" x2="900" y2="355" stroke="#35B98C" stroke-width="1.5" opacity="0.3"/><line x1="540" y1="175" x2="720" y2="325" stroke="#35B98C" stroke-width="1.5" opacity="0.3"/><line x1="720" y1="325" x2="640" y2="435" stroke="#35B98C" stroke-width="1.5" opacity="0.3"/><line x1="640" y1="435" x2="420" y2="465" stroke="#35B98C" stroke-width="1.5" opacity="0.3"/><line x1="340" y1="255" x2="420" y2="465" stroke="#35B98C" stroke-width="1.5" opacity="0.3"/><line x1="720" y1="325" x2="900" y2="355" stroke="#35B98C" stroke-width="1.5" opacity="0.3"/><circle cx="340" cy="255" r="6" fill="#35B98C" opacity="0.7"/><circle cx="540" cy="175" r="6" fill="#35B98C" opacity="0.7"/><circle cx="780" cy="225" r="6" fill="#35B98C" opacity="0.7"/><circle cx="900" cy="355" r="6" fill="#35B98C" opacity="0.7"/><circle cx="640" cy="435" r="6" fill="#35B98C" opacity="0.7"/><circle cx="420" cy="465" r="6" fill="#35B98C" opacity="0.7"/><circle cx="720" cy="325" r="6" fill="#35B98C" opacity="0.7"/>
+
+  
+  <rect x="48" y="72" width="36" height="3" rx="1.5" fill="#35B98C"/>
+
+  
+  <g transform="translate(1050,552) scale(1.15)" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <path d="M6 37 L6 11 L17 24 L28 11 L28 37" stroke="#F1EFE8" opacity="0.85"/>
+    <path d="M36 11 L36 37 M36 24 L50 11 M36 24 L50 37" stroke="#35B98C"/>
+    <circle cx="57" cy="6" r="3.5" fill="#35B98C" stroke="none"/>
+  </g>
+</svg>

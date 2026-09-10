@@ -24,7 +24,7 @@ import { about, seo, site } from "@/lib/site";
 const skillIcons = { Server, Code2, ShoppingBag, Gauge, PenTool, Languages };
 const philosophyIcons = [Rocket, Gauge, SearchCheck, Layers];
 const interestIcons = { Gamepad2, Tent, BookOpen, Waves };
-const storyEras = ["2011 — 2014", "2017 — 2018", "2018 — 2021", "2021 — present"];
+const storyEras = ["2009 — 2014", "2016 — 2018", "2018 — 2025", "2025 — present"];
 
 export const metadata: Metadata = {
   title: seo.about.title,

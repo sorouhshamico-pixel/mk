@@ -111,20 +111,26 @@ Building Arabic content forces decisions that never come up in English projects.
 
 ## About
 
-**Heading:** I've been building for the web since `[year]`
+**Heading:** I've been building for the web since 2018
 
 **Bio:**
-I'm Mohamed Khalifa, a full-stack web developer. I work on content platforms and interactive tools in Arabic, and I care most about the seam where engineering meets discoverability. A fast site nobody can find is not a finished project, and a visible site that takes six seconds to paint loses its reader before the first sentence.
+I'm Mohamed Khalifa, a web developer based in Riyadh. I build fast, fully integrated websites — content platforms, e-commerce stores, and interactive tools — and I care most about the seam where engineering meets discoverability. A fast site nobody can find is not a finished project, and a visible site that takes six seconds to paint loses its reader before the first sentence.
 
-My most recent launch is Wazifatk, a Saudi job platform I built alone from the database schema to the last detail of the interface.
+I'm currently a web developer at Rabit Information Technology in Riyadh, and I've taken freelance work through Hsoub since 2019 — dozens of WordPress and e-commerce builds across the Gulf. My most recent platform build is Wazifatk, a Saudi job board with five labour-law calculators, built alone from the database schema to the last detail of the interface.
 
-`[Add: your background, how you started, what you're working on now.]`
+**Background (from Mohamed's LinkedIn):**
+- Studied Geographic Information Science & Cartography at Assiut University (2009–2014)
+- GIS Specialist, Orascom Construction, Egypt (2016–2018) — spatial data, maps, small interactive tools
+- Web Developer, Manarat for Digital Solutions (2018–2021, remote, part-time)
+- Freelance WordPress developer via Hsoub (2019–present)
+- Web Developer, Rabit Information Technology, Riyadh (2025–present)
 
 **Skills:**
-- Backend: PHP, Laravel, MySQL, REST APIs
-- Frontend: JavaScript, TypeScript, Next.js, Tailwind CSS
-- Performance and SEO: Core Web Vitals, structured data, PWA
-- Tooling: Git, Linux, `[add what you use]`
+- Frontend: JavaScript, TypeScript, React, Next.js, Tailwind CSS, Sass, Bootstrap
+- Backend: PHP, Laravel, MySQL, REST APIs, Python
+- Platforms: WordPress, WooCommerce, Shopify, Salla, Zid, Webflow
+- Performance and SEO: Core Web Vitals, structured data, PWA, technical SEO
+- Design & tooling: Figma, Adobe XD, Elementor, Git, Linux
 
 ---
 
@@ -135,7 +141,7 @@ My most recent launch is Wazifatk, a Saudi job platform I built alone from the d
 
 **Form fields:** Name, email, project type (content platform / store / tool / other), message.
 
-**Links:** `[email]` · `[GitHub]` · `[LinkedIn]` · https://mostaql.com/u/M1_m2/portfolio
+**Links:** mmd1790@gmail.com · WhatsApp +966 53 271 9336 · linkedin.com/in/mohamed-khalifa-6a6b5b189 · github.com/mgkh286 · mostaql.com/u/M1_m2
 
 ---
 
@@ -158,4 +164,4 @@ Arabic copy is ready in `CONTENT.ar.md`. When the English build is signed off:
 - English stays at `/`, Arabic moves to `/ar`
 - `dir` and `lang` switch per locale; layout mirrors rather than being rebuilt
 - `hreflang` tags link the two locales in both directions
-- The Arabic locale loads IBM Plex Sans Arabic; English loads Inter Tight
+- The Arabic locale loads Noto Kufi Arabic; English loads Inter Tight

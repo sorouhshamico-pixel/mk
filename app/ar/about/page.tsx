@@ -24,7 +24,7 @@ import { site, about, seo } from "@/lib/site.ar";
 const skillIcons = { Server, Code2, ShoppingBag, Gauge, PenTool, Languages };
 const philosophyIcons = [Rocket, Gauge, SearchCheck, Layers];
 const interestIcons = { Gamepad2, Tent, BookOpen, Waves };
-const storyEras = ["٢٠١١ – ٢٠١٤", "٢٠١٧ – ٢٠١٨", "٢٠١٨ – ٢٠٢١", "٢٠٢١ – الآن"];
+const storyEras = ["٢٠٠٩ – ٢٠١٤", "٢٠١٦ – ٢٠١٨", "٢٠١٨ – ٢٠٢٥", "٢٠٢٥ – الآن"];
 
 export const metadata: Metadata = {
   title: seo.about.title,

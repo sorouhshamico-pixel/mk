@@ -24,6 +24,8 @@ export default function Home() {
     url: site.url,
     email: site.email,
     address: { "@type": "PostalAddress", addressLocality: site.location },
+    worksFor: { "@type": "Organization", name: "Rabit Information Technology" },
+    alumniOf: { "@type": "CollegeOrUniversity", name: "Assiut University" },
     sameAs: [site.linkedin, site.github, site.mostaql],
   };
 

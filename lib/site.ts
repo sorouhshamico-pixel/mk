@@ -1,8 +1,10 @@
 // Site-wide copy and constants.
-// Base copy comes from brand/CONTENT.en.md. Contact info, work history, and
-// the Mostaql stats below are pulled from Mohamed's own public profiles —
-// https://mostaql.com/u/M1_m2 and https://mohamedkhalifa.netlify.app — at
-// his request, since brand/BRIEF.md §6 listed them as still missing.
+// Base copy comes from brand/CONTENT.en.md. Contact info, work history,
+// education, and the Mostaql stats below are pulled from Mohamed's own
+// profiles at his request, since brand/BRIEF.md §6 listed them as still
+// missing — the experience/education chronology now follows his LinkedIn
+// (linkedin.com/in/mohamed-khalifa-6a6b5b189), which supersedes the older
+// mohamedkhalifa.netlify.app timeline.
 
 export const site = {
   name: "Mohamed Khalifa",
@@ -101,16 +103,16 @@ export const about = {
   pullQuote:
     "A fast site nobody can find is not a finished project, and a visible site that takes six seconds to paint loses its reader before the first sentence.",
   bio: [
-    "I'm Mohamed Khalifa, a full-stack web developer based in Riyadh. I build content platforms, e-commerce stores, and interactive tools, and I care most about the seam where engineering meets discoverability.",
-    "My most recent launch is Wazifatk, a Saudi job platform I built alone from the database schema to the last detail of the interface.",
+    "I'm Mohamed Khalifa, a web developer based in Riyadh. I build fast, fully integrated websites — content platforms, e-commerce stores, and interactive tools — and I care most about the seam where engineering meets discoverability.",
+    "I'm currently a web developer at Rabit Information Technology, and I've taken freelance work through Hsoub since 2019 — dozens of WordPress and e-commerce builds across the Gulf. My most recent platform build is Wazifatk, a Saudi job board with five labour-law calculators, built alone from the database schema to the last detail of the interface.",
   ],
-  // Real chronology (mohamedkhalifa.netlify.app) narrated in full — not new
-  // facts, just the story the timeline below only shows as dates.
+  // Real chronology, following Mohamed's LinkedIn — not new facts, just the
+  // story the timeline below only shows as dates.
   story: [
-    "I didn't start in code. I studied Geographic Information Systems at Assiut University, and spent the next couple of years mapping infrastructure for Orascom Construction — work that has more in common with structured data and spatial logic than it looks like from the outside.",
-    "Somewhere in the middle of that job, I picked up a web development scholarship and started teaching myself to build for the browser in whatever hours were left in the day. By 2018 the self-taught skill had become the actual job: I went freelance, and spent the next few years building stores, landing pages, and corporate sites for clients across Saudi Arabia, Turkey, Qatar, Morocco, and Tunisia.",
-    "Freelancing at that pace teaches you the constraint that matters most — at the end of every project, someone with a real budget has to see it working. I kept sharpening the craft through more training, then moved in-house at Manarat in 2021 to build depth instead of breadth for a while.",
-    "Wazifatk is where those two instincts met: the GIS-trained comfort with structured, spatial data, and years of shipping to real deadlines for real clients. It's a job platform with five labour-law calculators and a fully generated set of city and sector pages — planned, built, and shipped by one person.",
+    "I didn't start in code. I studied Geographic Information Science and Cartography at Assiut University — years of turning messy real-world space into structured, queryable data, a discipline with far more in common with database design and semantic markup than the job title suggests.",
+    "My first job out of university was as a GIS specialist at Orascom Construction: collecting and analysing spatial data, producing maps, and building small interactive tools for project teams. That's where I first wrote code to make data useful to other people — and decided I wanted to do it full-time.",
+    "So I taught myself the browser. I joined Manarat for Digital Solutions in 2018, building and maintaining responsive sites alongside their design and content teams, and in 2019 I started taking freelance work through Hsoub. Over the next few years that became the main thing: dozens of WordPress builds, e-commerce stores on Salla, Zid, Shopify, and WooCommerce, landing pages, speed rescues, and design-to-code work for clients across Saudi Arabia and the wider region. Freelancing at that volume teaches you the one constraint that matters — at the end of every project, someone with a real budget has to see it working.",
+    "In 2025 I moved to Riyadh and joined Rabit Information Technology as a web developer, building fully integrated sites for clients across industries — from requirements and UI through responsive front-end, technical SEO, system integration, and post-launch support. Wazifatk is the project where the two halves of that path finally met: the GIS-trained instinct for structured data, and years of shipping to real deadlines for real clients.",
   ],
   // Working principles, drawn from how the case studies on this site are
   // actually described — not aspirational copy invented for this page.
@@ -148,7 +150,7 @@ export const about = {
     {
       label: "Frontend",
       icon: "Code2",
-      items: ["JavaScript", "TypeScript", "Next.js", "React", "Tailwind CSS"],
+      items: ["JavaScript", "TypeScript", "React", "Next.js", "Tailwind CSS", "Sass", "Bootstrap"],
     },
     {
       label: "Platforms",
@@ -163,7 +165,7 @@ export const about = {
     {
       label: "Design & tooling",
       icon: "PenTool",
-      items: ["Figma", "Git", "Linux", "Elementor"],
+      items: ["Figma", "Adobe XD", "Elementor", "Git", "Linux"],
     },
     {
       label: "Languages",
@@ -171,16 +173,21 @@ export const about = {
       items: ["Arabic", "English", "French"],
     },
   ],
-  // Source: mohamedkhalifa.netlify.app
+  // Source: Mohamed's LinkedIn (linkedin.com/in/mohamed-khalifa-6a6b5b189).
   experience: [
     {
       role: "Web Developer",
-      org: "Manarat Co",
-      period: "2021 — present",
+      org: "Rabit Information Technology",
+      period: "2025 — present",
     },
     {
-      role: "Freelance Web Developer",
-      org: "Hsoub / Mostaql",
+      role: "Freelance WordPress Developer",
+      org: "Hsoub",
+      period: "2019 — present",
+    },
+    {
+      role: "Web Developer",
+      org: "Manarat for Digital Solutions",
       period: "2018 — 2021",
     },
     {
@@ -189,21 +196,23 @@ export const about = {
       period: "2016 — 2018",
     },
   ],
+  // Source: Mohamed's LinkedIn — degree plus the two named LinkedIn Learning
+  // certifications (11 listed in total).
   education: [
     {
-      title: "Advanced Web Development Path",
-      org: "Lynda",
-      period: "2020 — 2021",
-    },
-    {
-      title: "Egfwd Web Development Scholarship",
-      org: "Udacity",
-      period: "2017 — 2018",
-    },
-    {
-      title: "B.Sc. Geographic Information Systems",
+      title: "BA, Geographic Information Science & Cartography",
       org: "Assiut University",
-      period: "2011 — 2014",
+      period: "2009 — 2014",
+    },
+    {
+      title: "WordPress 5 Essential Training",
+      org: "LinkedIn Learning",
+      period: "2022",
+    },
+    {
+      title: "Learning Python",
+      org: "LinkedIn Learning",
+      period: "2020",
     },
   ],
 };

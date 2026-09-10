@@ -1,15 +1,23 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Languages } from "lucide-react";
+import Image from "next/image";
 import Reveal from "@/components/Reveal";
 import { site, blog, seo } from "@/lib/site.ar";
+import { sortedPostsAr } from "@/lib/posts.ar";
 
 export const metadata: Metadata = {
   title: seo.blog.title,
   description: seo.blog.description,
-  alternates: { canonical: `${site.url}/ar/blog` },
+  alternates: {
+    canonical: `${site.url}/ar/blog`,
+    languages: { en: `${site.url}/blog`, ar: `${site.url}/ar/blog`, "x-default": `${site.url}/blog` },
+  },
   openGraph: { title: seo.blog.title, description: seo.blog.description, url: `${site.url}/ar/blog` },
 };
+
+function formatDate(iso: string) {
+  return new Date(iso).toLocaleDateString("ar-EG", { day: "numeric", month: "long", year: "numeric" });
+}
 
 export default function BlogAr() {
   const breadcrumbJsonLd = {
@@ -37,27 +45,38 @@ export default function BlogAr() {
           </div>
         </Reveal>
 
-        <Reveal>
-          <div className="flex flex-col items-center gap-4 rounded-2xl border-[0.5px] border-hairline bg-surface px-8 py-16 text-center shadow-md">
-            <div className="flex h-12 w-12 items-center justify-center rounded-full bg-accent-soft text-accent">
-              <Languages size={22} />
-            </div>
-            <p className="text-lg text-ink">المقالات الإنجليزية جاهزة الآن.</p>
-            <p className="max-w-[420px] text-sm text-secondary">
-              النسخة العربية من المدونة قيد الإعداد. تقدر تقرأ المقالات المتوفرة حالياً بالإنجليزية، أو{" "}
-              <Link href="/ar/contact" className="text-accent hover:text-accent-hover">
-                تتواصل معي
-              </Link>{" "}
-              لو محتاج موضوع معيّن بالعربية.
-            </p>
-            <Link
-              href="/blog"
-              className="mt-2 rounded-full border-[0.5px] border-hairline px-5 py-2.5 text-sm font-medium text-ink transition-all hover:-translate-y-0.5 hover:bg-paper hover:shadow-md"
-            >
-              English blog
-            </Link>
-          </div>
-        </Reveal>
+        <div className="grid gap-8 sm:grid-cols-2">
+          {sortedPostsAr.map((post, i) => (
+            <Reveal key={post.slug} delay={i * 80}>
+              <Link
+                href={`/ar/blog/${post.slug}`}
+                className="hover-lift group flex h-full flex-col overflow-hidden rounded-xl border-[0.5px] border-hairline bg-surface shadow-md hover:border-accent/40 hover:shadow-2xl hover:shadow-accent/10"
+              >
+                <div className="relative aspect-[1200/630] w-full overflow-hidden">
+                  <Image
+                    src={post.cover}
+                    alt=""
+                    fill
+                    sizes="(min-width: 640px) 50vw, 100vw"
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    unoptimized
+                  />
+                </div>
+                <div className="flex flex-1 flex-col gap-3 p-6">
+                  <div className="flex items-center gap-3 font-mono text-xs text-muted">
+                    <span className="text-accent">{post.category}</span>
+                    <span aria-hidden="true">·</span>
+                    <time dateTime={post.date}>{formatDate(post.date)}</time>
+                    <span aria-hidden="true">·</span>
+                    <span>{post.readingTime}</span>
+                  </div>
+                  <h2 className="text-lg text-ink">{post.title}</h2>
+                  <p className="text-sm leading-[1.8] text-secondary">{post.excerpt}</p>
+                </div>
+              </Link>
+            </Reveal>
+          ))}
+        </div>
       </section>
     </>
   );

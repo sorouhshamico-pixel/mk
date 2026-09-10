@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { Newspaper, Calculator, SearchCheck, ArrowLeft } from "lucide-react";
 import StatusBadge from "@/components/StatusBadge";
 import Reveal from "@/components/Reveal";
@@ -8,7 +9,8 @@ import HeroPortrait from "@/components/HeroPortrait";
 import AmbientGlow from "@/components/AmbientGlow";
 import SectionMark from "@/components/SectionMark";
 import ProjectShowcase from "@/components/ProjectShowcase";
-import { site, hero, statusBadge, whatIDo, workSection, intro, contact, stats, seo, arProjects } from "@/lib/site.ar";
+import { site, hero, statusBadge, whatIDo, workSection, intro, contact, stats, seo, blog, arProjects } from "@/lib/site.ar";
+import { sortedPostsAr } from "@/lib/posts.ar";
 
 const icons = { Newspaper, Calculator, SearchCheck };
 
@@ -31,6 +33,8 @@ export default function HomeAr() {
     url: `${site.url}/ar`,
     email: site.email,
     address: { "@type": "PostalAddress", addressLocality: site.locationAr },
+    worksFor: { "@type": "Organization", name: "Rabit Information Technology" },
+    alumniOf: { "@type": "CollegeOrUniversity", name: "Assiut University" },
     sameAs: [site.linkedin, site.github, site.mostaql],
   };
 
@@ -182,6 +186,50 @@ export default function HomeAr() {
             className="group inline-flex w-fit items-center gap-2 ps-9 text-sm text-accent hover:text-accent-hover"
           >
             عرض كل الأعمال
+            <ArrowLeft size={14} className="transition-transform group-hover:-translate-x-1" />
+          </Link>
+        </section>
+
+        {/* Blog */}
+        <section className="relative mx-auto flex max-w-[1200px] flex-col gap-10 px-6 py-14 sm:py-20">
+          <Reveal>
+            <div className="flex flex-col gap-2">
+              <SectionMark index="٠٤" label={blog.heading} />
+              <p className="ps-9 text-secondary">{blog.subhead}</p>
+            </div>
+          </Reveal>
+
+          <div className="grid gap-6 sm:grid-cols-3">
+            {sortedPostsAr.slice(0, 3).map((post, i) => (
+              <Reveal key={post.slug} delay={i * 80}>
+                <Link
+                  href={`/ar/blog/${post.slug}`}
+                  className="hover-lift group flex h-full flex-col overflow-hidden rounded-xl border-[0.5px] border-hairline bg-surface shadow-sm hover:border-accent/40 hover:shadow-xl"
+                >
+                  <div className="relative aspect-[1200/630] w-full overflow-hidden">
+                    <Image
+                      src={post.cover}
+                      alt=""
+                      fill
+                      sizes="(min-width: 640px) 33vw, 100vw"
+                      className="object-cover transition-transform duration-500 group-hover:scale-105"
+                      unoptimized
+                    />
+                  </div>
+                  <div className="flex flex-1 flex-col gap-2 p-5">
+                    <span className="font-mono text-[11px] text-accent">{post.category}</span>
+                    <h3 className="text-sm leading-snug text-ink">{post.title}</h3>
+                  </div>
+                </Link>
+              </Reveal>
+            ))}
+          </div>
+
+          <Link
+            href="/ar/blog"
+            className="group inline-flex w-fit items-center gap-2 ps-9 text-sm text-accent hover:text-accent-hover"
+          >
+            اقرأ كل المقالات
             <ArrowLeft size={14} className="transition-transform group-hover:-translate-x-1" />
           </Link>
         </section>

@@ -2,6 +2,7 @@ import type { MetadataRoute } from "next";
 import { site } from "@/lib/site";
 import { readyProjects } from "@/lib/projects";
 import { posts } from "@/lib/posts";
+import { postsAr } from "@/lib/posts.ar";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes: MetadataRoute.Sitemap = ["", "/work", "/blog", "/about", "/contact"].map((route) => ({
@@ -31,5 +32,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/ar/blog",
   ].map((route) => ({ url: `${site.url}${route}`, lastModified: new Date() }));
 
-  return [...staticRoutes, ...projectRoutes, ...postRoutes, ...arabicRoutes];
+  const arabicPostRoutes: MetadataRoute.Sitemap = postsAr.map((p) => ({
+    url: `${site.url}/ar/blog/${p.slug}`,
+    lastModified: new Date(p.date),
+  }));
+
+  return [...staticRoutes, ...projectRoutes, ...postRoutes, ...arabicRoutes, ...arabicPostRoutes];
 }
